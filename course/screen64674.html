@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+			align-items: center;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.left p {
+			font-size: 18px;
+			line-height: 1.6;
+		}
+
+		ul li {
+			margin: 8px;
+		}
+
+		.right {
+			flex: 0 0 400px;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+			display: block;
+		}
+
+		/* Responsive: stack on small screens */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Left: Paragraph -->
+		<div class="left">
+			<h2>Unresponsive person in the car</h2>
+			<p>
+				Keep the following points in mind when providing first aid at the scene of a road accident:
+			</p>
+			<ul>
+				<li>Try to help without actually entering into the crashed car. It could dangerous for you and the
+					injured person. It is not uncommon that airbags are set off by someone climbing into a crashed car,
+					which can cause further harm to both the first aider and the injured person. Only enter a vehicle if
+					you cannot get access to the injured person to check their breathing or stop a bleed, for example.
+					Be very cautious for everyone’s safety</li>
+				<li>Carefully lean into the vehicle through the door or window nearest to the injured person and
+					position yourself beside their head</li>
+				<li>Check if they are responsive by asking the casualty simple questions in a loud and clear voice </li>
+				<li>If the casualty does not respond, call for help and clear the airway. We will learn how to do so in
+					the next section. </li>
+			</ul>
+		</div>
+
+		<!-- Right: Image -->
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 124554.png" alt="Sample">
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Response – Knowledge Check</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 25px;
+      background: #ffffff;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+    }
+
+    .scenario {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .option {
+      margin-bottom: 18px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+
+    <div class="scenario">
+      You correctly open the man’s airway and check for signs of breathing by listening
+      for breaths, looking for movement in the chest, and feeling for breath on your
+      cheek. You see and feel nothing. The lady has left to get help.
+      <br><br>
+      <strong>What do you do now?</strong>
+    </div>
+
+    <form id="quizForm">
+
+      <div class="option">
+        <input type="radio" name="q2" value="Begin chest compressions">
+        Begin chest compressions, pushing firmly down in the middle of their chest
+      </div>
+
+      <div class="option">
+        <input type="radio" name="q2" value="Give rescue breaths">
+        Give rescue breaths (mouth-to-mouth resuscitation) immediately
+      </div>
+
+      <div class="option">
+        <input type="radio" name="q2" value="Cover with blanket">
+        Cover the man with a blanket to keep him warm
+      </div>
+
+      <div class="option">
+        <input type="radio" name="q2" value="Attempt to wake">
+        Attempt to wake the man up from his unresponsive state
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct. If the casualty is not breathing, begin chest compressions immediately.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct action is to begin chest compressions immediately.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="q2"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("emergencyScenario_Q2", answer);
+
+      const correctAnswer = "Begin chest compressions";
+
+      if (answer === correctAnswer) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.right {
+			flex: 1;
+		}
+
+		.right img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		/* Responsive for smaller screens */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right,
+			.left {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="left">
+			<h2>Complications associated with bleeding </h2>
+			
+			<ul>
+				<li>As you saw in the video, when someone is bleeding, you should continually observe the person and be ready to act if they show signs that they are going to faint. If the injured person is not lying down, assist them into a lying position. This can be especially important for older adults for example, or those who could cause significant harm to themselves if they were to fall. Always remember to maintain direct pressure to the site of bleeding, even when the person is changing position. However, if you suspect that they have broken a limb or have received trauma to the head, neck or spinal cord, do not move the injured person.</li>
+				
+			</ul>
+		</div>
+
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 114629.png" alt="Sample Image">
+
+		</div>
+	</div>
+
+</body>
+
+</html>

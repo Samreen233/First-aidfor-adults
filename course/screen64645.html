@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Procurement Assessment - Q32</title>
+
+	<script>
+		function Initialize() { }
+		var isAssessment = true;
+	</script>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			max-width: 100%;
+			overflow-y: hidden;
+			/* prevent accidental horizontal scroll */
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		ol,
+		li {
+			max-width: 100%;
+			word-wrap: break-word;
+		}
+
+		/* =========================
+       MAIN CONTAINER
+       ========================= */
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 90%;
+			margin: auto;
+			padding: 25px;
+			border-radius: 8px;
+			align-items: flex-start;
+		}
+
+		/* =========================
+       LEFT SIDE
+       ========================= */
+		.left {
+			flex: 1;
+			min-width: 300px;
+		}
+
+		.textHeadline {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+
+		.textContent p {
+			margin-bottom: 15px;
+			line-height: 1.6;
+		}
+
+		/* =========================
+       RIGHT SIDE
+       ========================= */
+		.right {
+			flex: 0 0 400px;
+			max-width: 100%;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		/* =========================
+       FEEDBACK STYLES
+       ========================= */
+		.feedback {
+			display: none;
+			margin-top: 15px;
+			font-weight: bold;
+		}
+
+		.correct {
+			color: green;
+		}
+
+		.incorrect {
+			color: red;
+		}
+
+		button,
+		input[type="button"] {
+			margin-top: 15px;
+			padding: 8px 16px;
+			cursor: pointer;
+		}
+
+		/* =========================
+       MOBILE FIXES + SCROLLBAR
+       ========================= */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+				overflow-y: auto;
+				/* horizontal scrollbar only on small screens */
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+
+</head>
+
+<body onload="Initialize();">
+
+	<div class="container">
+
+		<!-- LEFT SIDE -->
+		<div class="left">
+			<div class="textHeadline">When is a stroke not a stroke? </div>
+
+			<p>In some cases, stroke-like symptoms may be mild and only last a short duration. These are known as
+				transient ischemic attacks (don’t worry, you don’t have to remember that!). Transient ischemic attacks
+				are warning or mini strokes that results in no lasting brain injury. The short duration of the symptoms
+				is the key indication that this may not a stroke. Nevertheless, it is important that the person seeks
+				medical help as early treatment to reduce the risk of a major stroke could be life-saving. As a first
+				aider, help the person to call emergency medical services attention immediately. </p>
+		</div>
+
+		<!-- RIGHT SIDE -->
+		<div class="right">
+			<!-- Example image (optional) -->
+			<img src="../media/content/Screenshot 2026-01-07 112012.png" alt="FAST Stroke Symptoms">
+		</div>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 10 of 39" closeText="OK">
+    <question>What is required when handling personal and confidential data at NIDA-Pakistan?</question>
+  <answers>
+    <option correct="1" display_order="0" alt="">Ensure lawful, ethical, and secure collection, processing, and storage.</option>
+    <option correct="0" display_order="1" alt="">Share it freely with colleagues for convenience.</option>
+    <option correct="0" display_order="2" alt="">Use personal devices without security precautions.</option>
+    <option correct="0" display_order="3" alt="">Disclose data to external parties without authorization.</option>
+  </answers>
+  <correct audio="">Correct! Confidential data must always be handled securely and ethically.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Ensure lawful, ethical, and secure collection, processing, and storage.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

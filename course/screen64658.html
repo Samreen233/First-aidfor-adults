@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.right {
+			flex: 1;
+		}
+
+		.right img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		/* Responsive for smaller screens */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right,
+			.left {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="left">
+			<h2>Aftercare</h2>
+
+			<p>Make sure to assess the injured person for other injures. Bleeding usually indicates obvious injury,
+				however, it is important not to miss other injuries that may be less visible. </p>
+			<ul>
+				<li>If the bleeding does not stop or there is an object in the wound, seek medical help</li>
+				<li>Provided that the wound is only minor and the bleeding stops, the wound can be cleaned, sterilized
+					and covered with a sterile plaster (band-aid) or gauze to aid healing and minimize the risk of
+					infection.</li>
+			</ul>
+			<p>Remember, by building up your knowledge and developing your confidence in delivering first aid, you can
+				use appropriate techniques in any given situation. Try to stay calm and perform the skills step by step
+				to best help the person that needs first aid.</p>
+		</div>
+
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 115150.png" alt="Sample Image">
+
+		</div>
+	</div>
+
+</body>
+
+</html>

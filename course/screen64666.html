@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paragraph and Image Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: center;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .right {
+      flex: 0 0 400px;
+    }
+
+    .right img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left: Paragraph -->
+    <div class="left">
+      <h3>Key points on bleeding</h3>
+      <p>
+       The most important action to control bleeding is to apply direct pressure to the wound. If possible, try to avoid direct contact with the person's blood by using a clean dressing, piece of cloth or plastic bag. Finally, make sure to wash your hands after providing first aid. Call for help if the bleeding does not stop and/or if there is a lot of blood. 
+      </p>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="right">
+      <img src="../media/content/Screenshot 2026-01-07 122619.png" alt="Sample">
+    </div>
+  </div>
+
+</body>
+</html>

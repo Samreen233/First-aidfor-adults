@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>First Aid Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 25px;
+      background: #ffffff;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+    }
+
+    .question {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .option {
+      margin-bottom: 18px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+
+    <p>
+      You continue to cycle between giving 30 chest compressions and two rescue breaths.
+      After a short time, the emergency services arrive and take over.
+      Thankfully, they are able to restart the man's heart and he is back to breathing normally again.
+      The medical staff congratulate you on your actions that have just saved that man's life.
+    </p>
+
+    <p><strong>What could you have done differently if you were in the same position again?</strong></p>
+
+    <form id="quizForm">
+      <div class="option">
+        <input type="radio" name="answer" id="opt1" value="blanket">
+        <label for="opt1">You should have covered the man in a blanket to keep him warm</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="answer" id="opt2" value="recovery">
+        <label for="opt2">You should have put him in the recovery position</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="answer" id="opt3" value="defibrillator">
+        <label for="opt3">You would have asked a bystander to find out if there is a defibrillator nearby</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="answer" id="opt4" value="shake">
+        <label for="opt4">You would have attempted to wake the man up by shaking him forcefully</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+
+      if (!selected) {
+        alert("Please select an option.");
+        return;
+      }
+
+      document.getElementById("result").innerText =
+        "Your answer has been submitted successfully.";
+    }
+  </script>
+
+</body>
+
+</html>

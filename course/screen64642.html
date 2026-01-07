@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Procurement Assessment - Q32</title>
+
+  <script>
+    function Initialize() { }
+    var isAssessment = true;
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-y: hidden;
+      /* prevent accidental horizontal scroll */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      /* padding: 20px; */
+      background: #f4f4f4;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    ol,
+    li {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    /* =========================
+       MAIN CONTAINER
+       ========================= */
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 90%;
+      margin: auto;
+      /* padding: 25px; */
+      border-radius: 8px;
+      align-items: flex-start;
+    }
+
+    /* =========================
+       LEFT SIDE
+       ========================= */
+    .left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .textHeadline {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .textContent p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       RIGHT SIDE
+       ========================= */
+    .right {
+      flex: 0 0 400px;
+      max-width: 100%;
+    }
+
+    .right img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* =========================
+       FEEDBACK STYLES
+       ========================= */
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    button,
+    input[type="button"] {
+      margin-top: 15px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       MOBILE FIXES + SCROLLBAR
+       ========================= */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        overflow-y: auto;
+        /* horizontal scrollbar only on small screens */
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body onload="Initialize();">
+
+  <div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+      <div class="textHeadline">Recognizing the symptoms of a stroke</div>
+
+      <p>A stroke can be recognized using the acronym FAST. Click on the image below to learn more.</p>
+
+      <ol>
+        <h4>F: Face drooping</h4>
+        <li>
+          Does one side of the face droop or is it numb? Ask the person to smile.
+          Is the person's smile uneven or lopsided?
+        </li>
+
+        <h4>A: Arm Weakness</h4>
+        <li>
+          Is one arm weak or numb? Ask the person to raise both arms.
+          Does one arm fall further downward than the other?
+        </li>
+
+        <h4>S: Speech difficulty</h4>
+        <li>
+          Is their speech slurred, or are they completely unable to speak?
+          Ask the person to repeat a simple sentence.
+          Are they able to repeat it correctly?
+        </li>
+
+        <h4>T: Time to call for help</h4>
+        <li>
+          If someone shows these symptoms, call emergency services immediately
+          or get them to a medical facility as quickly and safely as possible.
+        </li>
+      </ol>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <!-- Example image (optional) -->
+      <img src="../media/content/Screenshot 2026-01-07 111503.png" alt="FAST Stroke Symptoms">
+    </div>
+
+  </div>
+
+</body>
+
+</html>

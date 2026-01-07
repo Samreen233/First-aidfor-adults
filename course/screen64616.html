@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Procurement Assessment - Q22</title>
+
+  <script>
+    function Initialize() { InitSound(); }
+    function InitSound() { }
+    var isAssessment = true;
+  </script>
+
+  <script src="utility.js"></script>
+  <script src="screenUtils.js"></script>
+  <script src="interactiveUtils.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 25px;
+      background: #fff;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .text-section {
+      flex: 1;
+    }
+
+    .image-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    .textHeadline {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .mcq-option {
+      margin-bottom: 10px;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    input[type="button"] {
+      margin-top: 15px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+
+  <script>
+    function checkAnswerQ22() {
+      var correct = document.getElementById("q22a1").checked;
+      document.getElementById("correctFeedbackQ22").style.display = correct ? "block" : "none";
+      document.getElementById("incorrectFeedbackQ22").style.display = correct ? "none" : "block";
+    }
+  </script>
+</head>
+
+<body class="contentBody" onload="Initialize();">
+
+  <div class="container">
+    <!-- Left Text Section -->
+    <div class="text-section">
+      <div class="textHeadline">COVID-19 and CPR</div>
+      <div class="textContent">
+        <h4>Providing CPR in the context of COVID-19
+        </h4>
+        <p>Whenever CPR is carried out, particularly on an unknown casualty, there is risk of infection. This is a
+          particular risk when providing rescue breaths. When cardiac arrest occurs in the context of an infectious
+          disease outbreak protective measures must be taken by the first aider. Remember, the first thing to do is to
+          call for help.</p>
+        <p>Follow the steps outlined below: </p>
+        <ul>
+          <li>Wear a mask if possible. </li>
+          <li>After lying the casualty on their back, do not tilt their head back or open their airway. Do not attempt
+            to open their mouth.</li>
+          <li>Do not lean over the casualty’s face. Do not put your ear or cheek on or near the casualty’s mouth or
+            nose.</li>
+          <li>Verify that the casualty is breathing by checking if their stomach and chest rise and fall.</li>
+          <li>In the absence of normal breathing, or if you are unsure, alert emergency services immediately. If COVID
+            19 is suspected, inform them.</li>
+          <li>Start chest compressions immediately. If possible, place a tissue, a towel or a mask over the mouth and
+            nose of the casualty before proceeding with chest compressions. Use hands only for CPR in order to reduce
+            the risk of the virus being spread in the air (aerosolization). </li>
+          <li>If available, use an automatic external defibrillator (AED) as soon as possible. Stand at the casualty’s
+            feet when administering the shock and follow the instructions given on the device and by the emergency
+            services.
+          </li>
+          <li>Do not perform mouth to mouth resuscitation unless the first aider lives in the same household as the
+            casualty (as then the first aider shares the same risk of contamination/ risk is limited within the family).
+          </li>
+          <li>You should wash your hands thoroughly with soap and water both BEFORE and AFTER performing
+            compression-only CPR. If there is no access to running water, an alcohol-based hand gel or ash can be used
+            as an alternative.</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- Right Image Section -->
+    <div class="image-section">
+      <!-- <img src="../media/content/Screenshot 2026-01-06 122643.png" alt="Procurement Plan Illustration"> -->
+    </div>
+  </div>
+
+</body>
+
+</html>

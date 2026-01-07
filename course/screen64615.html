@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script>
+    function Initialize() { InitSound(); }
+    function InitSound() { }
+    var isAssessment = true;
+  </script>
+
+  <script src="utility.js"></script>
+  <script src="screenUtils.js"></script>
+  <script src="interactiveUtils.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 25px;
+      background: #fff;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .text-section {
+      flex: 1;
+    }
+
+    .image-section {
+      flex: 1;
+      text-align: center;
+    }
+
+    .textHeadline {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .mcq-option {
+      margin-bottom: 10px;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    input[type="button"] {
+      margin-top: 15px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+
+  <script>
+    function checkAnswerQ22() {
+      var correct = document.getElementById("q22a1").checked;
+      document.getElementById("correctFeedbackQ22").style.display = correct ? "block" : "none";
+      document.getElementById("incorrectFeedbackQ22").style.display = correct ? "none" : "block";
+    }
+  </script>
+</head>
+
+<body class="contentBody" onload="Initialize();">
+
+  <div class="container">
+    <!-- Left Text Section -->
+    <div class="text-section">
+      <div class="textHeadline">Key points on CPR</div>
+      <div class="textContent">
+
+        <ul>
+          <li>To assess if a person is breathing, use your cheek to feel for any breath and look to see if their chest
+            is rising and falling. </li>
+          <li>If there is no response from the person and they are not breathing normally, start CPR immediately. If an
+            AED is available, use this immediately, giving CPR while the AED is prepared. </li>
+          <li>Start CPR by providing 30 chest compressions. The chest should be compressed to a depth of approximately 5
+            - 6cm. You should allow the chest to fully re-expand between compressions.</li>
+          <li>If you are willing and able, follow each round of 30 chest compressions with two rescue breaths.</li>
+          <li>If you cannot simultaneously call for help, give CPR for at least one minute before calling for help.</li>
+          <li>Keep the time between breaths and compressions to a minimum and avoid leaning on the chest with your full
+            weight between compressions. </li>
+          <li>Chest compressions should be given at a continuous rate of between 100 and 120 compressions per minute.
+          </li>
+          <li>Continue the cycle of 30 chest compressions and two rescue breaths until emergency help arrives or until
+            the person shows signs of recovery.</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- Right Image Section -->
+    <div class="image-section">
+      <img src="../media/content/Screenshot 2026-01-06 122643.png" alt="Procurement Plan Illustration">
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Procurement Assessment - Q32</title>
+
+	<script>
+		function Initialize() { }
+		var isAssessment = true;
+	</script>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1200px;
+			margin: auto;
+			/* background: #ffffff; */
+			padding: 25px;
+			border-radius: 8px;
+			/* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+			align-items: flex-start;
+		}
+
+		/* Left side */
+		.left {
+			flex: 1;
+		}
+
+		.textHeadline {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+
+		.textContent p {
+			margin-bottom: 15px;
+			line-height: 1.6;
+		}
+
+		.mcq-option {
+			margin-bottom: 10px;
+		}
+
+		.feedback {
+			display: none;
+			margin-top: 15px;
+			font-weight: bold;
+		}
+
+		.correct {
+			color: green;
+		}
+
+		.incorrect {
+			color: red;
+		}
+
+		/* Right side */
+		.right {
+			flex: 0 0 400px;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		button,
+		input[type="button"] {
+			margin-top: 15px;
+			padding: 8px 16px;
+			cursor: pointer;
+		}
+
+		/* Responsive */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+
+	<script>
+		function checkAnswerQ32() {
+			var correct = document.getElementById("q32a1").checked;
+			document.getElementById("correctFeedbackQ32").style.display = correct ? "block" : "none";
+			document.getElementById("incorrectFeedbackQ32").style.display = correct ? "none" : "block";
+		}
+	</script>
+
+</head>
+
+<body onload="Initialize();">
+
+	<div class="container">
+
+		<!-- LEFT SIDE: TEXT + QUESTION -->
+		<div class="left">
+			<div class="textHeadline">First aid for stroke</div>
+
+			<p>Stroke is one of the leading causes of death and disability in people over 60 around the world. With some
+				simple first aid knowledge, the signs can be spotted early, ensuring that the person receives essential
+				urgent treatment as quickly as possible. </p>
+
+
+			<div class="textContent">
+
+
+			</div>
+		</div>
+
+		<!-- RIGHT SIDE: IMAGE -->
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 015302.png" alt="Procurement Illustration">
+		</div>
+
+	</div>
+
+</body>
+
+</html>

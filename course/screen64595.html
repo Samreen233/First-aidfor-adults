@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pandemic First Aid Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .quiz-box {
+      max-width: 650px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .option {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-box">
+    <h3>
+      What should you <strong>NOT</strong> do when handling a casualty in a pandemic situation?
+      <br><small>(Select all that apply)</small>
+    </h3>
+
+    <div class="option">
+      <input type="checkbox" value="Lay the casualty on their back">
+      Lay the casualty on their back
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Clear the airway by tilting the casualty’s head backwards">
+      Clear the airway by tilting the casualty’s head backwards
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Open their mouth">
+      Open their mouth
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Verify breathing by putting ear and cheek over mouth and nose">
+      Verify the casualty’s breathing by putting your ear and cheek over the casualty’s mouth and nose
+    </div>
+
+    <button onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const correctAnswers = [
+        "Open their mouth",
+        "Verify breathing by putting ear and cheek over mouth and nose"
+      ];
+
+      const selected = [];
+      document
+        .querySelectorAll('input[type="checkbox"]:checked')
+        .forEach(cb => selected.push(cb.value));
+
+      if (selected.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
+
+      // Save user answer
+      localStorage.setItem("pandemicQuiz_Q1", JSON.stringify(selected));
+
+      // Compare answers
+      const isCorrect =
+        selected.length === correctAnswers.length &&
+        selected.every(ans => correctAnswers.includes(ans));
+
+      if (isCorrect) {
+        alert("✅ Correct! Well done.");
+      } else {
+        alert("❌ Incorrect. Please review pandemic first aid guidelines.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

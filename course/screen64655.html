@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.right {
+			flex: 1;
+		}
+
+		.right img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		/* Responsive for smaller screens */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right,
+			.left {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="left">
+			<h2>Key actions to remember in the case of bleeding</h2>
+			<ul>
+				<li>It is critical to stop any bleeding as fast as possible. Do this by applying direct pressure to the
+					wound by using a clean dressing, bandage, cloth, or even a plastic bag </li>
+				<li>Avoid direct skin-to-skin contact with the person’s blood to reduce the chance of infection</li>
+				<li>If there is an object sticking out of the wound, do NOT remove it. Apply pressure to the area around
+					wound. Do not press the object further in - instead try to stabilize the object whilst applying
+					pressure </li>
+				<li>Assess if the wound is still bleeding. If so, apply more pressure to the wound. Add more dressings
+					if needed to help stop the flow of blood. Do NOT remove the dressing or cloth touching the skin -
+					simply add additional layers on top</li>
+				<li>Lay the person down and call for emergency help</li>
+			</ul>
+		</div>
+
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 114629.png" alt="Sample Image">
+
+		</div>
+	</div>
+
+</body>
+
+</html>

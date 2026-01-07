@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 22 of 39" closeText="OK">
+    <question>Which document must be attached to every payment to substantiate expenses?</question>
+  <answers>
+    <option correct="0" display_order="0" alt="">Only the invoice without signatures.</option>
+    <option correct="1" display_order="1" alt="">All relevant supporting documentation.</option>
+    <option correct="0" display_order="2" alt="">A verbal confirmation from the vendor.</option>
+    <option correct="0" display_order="3" alt="">No documents are required for amounts below PKR 50,000.</option>
+  </answers>
+  <correct audio="">Correct! Every payment must have supporting documents attached.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: All relevant supporting documentation.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

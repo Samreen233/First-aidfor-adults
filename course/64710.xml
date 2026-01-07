@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 14 of 39" closeText="OK">
+    <question>Which principle guides NIDA-Pakistan’s recruitment and selection process?</question>
+  <answers>
+    <option correct="1" display_order="0" alt="">Transparency, equity, merit-based selection, fairness, inclusivity, and diversity.</option>
+    <option correct="0" display_order="1" alt="">Recruitment based only on personal recommendations.</option>
+    <option correct="0" display_order="2" alt="">Selection based solely on age or gender preference.</option>
+    <option correct="0" display_order="3" alt="">Hiring only internal employees without external advertisement.</option>
+  </answers>
+  <correct audio="">Correct! Recruitment follows merit, inclusivity, and transparency.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Transparency, equity, merit-based selection, fairness, inclusivity, and diversity.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+			align-items: center;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.left p {
+			font-size: 18px;
+			line-height: 1.6;
+		}
+
+		.right {
+			flex: 0 0 400px;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+			display: block;
+		}
+
+		/* Responsive: stack on small screens */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Left: Paragraph -->
+		<div class="left">
+			<h2>Unresponsive person in the car</h2>
+			<p>
+				We learnt how to assess and provide first aid to someone who is unresponsive in an earlier module, but
+				what if someone is unresponsive in a car?
+
+				The principles are the same - we need to check to see if they are breathing normally and ensure that
+				their airway remains open if possible. In the case of road accidents, checking for breathing and keeping
+				the airway open are especially important because of the risk of commonly seen by first responders in
+				road traffic accidents.
+
+			</p>
+		</div>
+
+		<!-- Right: Image -->
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 124554.png" alt="Sample">
+		</div>
+	</div>
+
+</body>
+
+</html>

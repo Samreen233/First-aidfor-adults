@@ -1,0 +1,117 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Procurement Assessment</title>
+
+  <script>
+    function Initialize() { InitSound(); }
+    function InitSound() { }
+    var isAssessment = true;
+  </script>
+
+  <script src="utility.js"></script>
+  <script src="screenUtils.js"></script>
+  <script src="interactiveUtils.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+
+  <style>
+    .mcq-option {
+      margin-bottom: 10px;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+
+  <script>
+    function checkAnswer() {
+      var correct = document.getElementById("opt1").checked;
+      document.getElementById("correctFeedback").style.display = correct ? "block" : "none";
+      document.getElementById("incorrectFeedback").style.display = correct ? "none" : "block";
+    }
+  </script>
+
+</head>
+
+<body class="contentBody" onload="Initialize();">
+
+  <div id="Water_Mark"></div>
+
+  <!-- LEFT PANEL -->
+  <div id="UDUTU_Text1" class="text left top textHalfWidth fullHeight">
+
+    <div class="textHeadline" id="UDUTU_Text1_Headline">
+      The recovery position and COVID-19
+    </div>
+
+    <div class="textContent" id="UDUTU_Text1_Content">
+
+      <p>If you determine that the person is unresponsive but still breathing normally you should: </p>
+
+
+      <ul>
+        <li>Lay the casualty on their back </li>
+        <li>Do not tilt the casualty’s head backwards to clear the airway</li>
+        <li>Do not lean over the casualty’s face, do not put your ear and cheek over the casualty’s mouth and nose</li>
+        <li>Verify that the casualty is breathing by checking if their stomach and chest are rising approaching their
+          mouth.
+        </li>
+        <li>Alert emergency services and follow their instructions.</li>
+        <li>Put the casualty in the recovery position if advised by by the emergency services. If emergency services can
+          arrive quickly, they might tell you to leave the casualty lying on their back in order to avoid any close
+          contact.</li>
+      </ul>
+
+      <p>
+        <strong>
+          <font color="#b01c05">
+            Select Next to continue.
+          </font>
+        </strong>
+      </p>
+
+    </div>
+
+    <div id="UDUTU_Text1_EditContent" class="editPanel">
+      <p>text editing options</p>
+      <div id="UDUTU_Text1_btnAdd"></div>
+      <div id="UDUTU_Text1_btnEdit"></div>
+      <div id="UDUTU_Text1_btnSelect"></div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div id="UDUTU_MultiMedia1" class="image right top imageHalfWidth imageRegHeight">
+
+    <!-- <img id="UDUTU_MultiMedia1_Content" width="448" height="336"
+      src="../media/content/OPM_ER_PM_03b_superCounsel_81357.png" alt="Procurement documentation review"> -->
+
+    <div id="UDUTU_MultiMedia1_Caption" class="caption">
+      <div class="capText">
+       
+      </div>
+    </div>
+
+  </div>
+
+  <span id="UDUTU_Narration" style="visibility:hidden;">
+    ../Media/Content/sample.mp3
+  </span>
+
+</body>
+
+</html>

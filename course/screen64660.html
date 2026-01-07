@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Aid – Glass Injury Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      You've decided to go walking in the nearby hills with a family member. As you come around a corner, you slip and fall, immediately feeling a sharp pain in
+      your leg. You look down to see a small piece of glass sticking out of your leg. Your family member rushes over and says that they're going to pull the glass out.<br><br>
+      Is this the correct action to take?
+    </h2>
+
+    <form id="quizForm">
+      <div class="option">
+        <input type="radio" name="glassInjury" id="yes" value="Yes">
+        <label for="yes">Yes</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="glassInjury" id="no" value="No">
+        <label for="no">No</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! You should NOT pull out embedded glass yourself. The wound should be cleaned and treated by medical professionals.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. Pulling out embedded glass can cause more damage and bleeding. Seek professional help instead.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="glassInjury"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("glass_injury_question", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answer is "No"
+      if (answer === "No") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

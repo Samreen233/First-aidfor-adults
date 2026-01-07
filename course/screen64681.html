@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Road Accident – Avoid Getting Into the Car</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      /* background: #fff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 3px 12px rgba(0,0,0,0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      Medical professionals arrive at the scene and take over. The man is responsive now and thanks you for your actions. In this situation, you were able to open the man's airway without getting into the car. Why is it best to avoid getting into the car?
+    </h2>
+
+    <form id="quizForm">
+      <div class="option">
+        <input type="radio" name="avoidCar" id="opt1" value="You could startle the injured person causing further injury">
+        <label for="opt1">You could startle the injured person causing further injury</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="avoidCar" id="opt2" value="It is not the optimal position to open the person's airway">
+        <label for="opt2">It is not the optimal position to open the person's airway</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="avoidCar" id="opt3" value="You could mistakenly set the airbags off">
+        <label for="opt3">You could mistakenly set the airbags off</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="avoidCar" id="opt4" value="You might break a window or door getting into the car">
+        <label for="opt4">You might break a window or door getting into the car</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! The best position to open the airway is from outside the car, avoiding startling the injured person.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answer is: "You could startle the injured person causing further injury".
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="avoidCar"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save answer in localStorage
+      localStorage.setItem("road_accident_avoid_car", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answer = option 1
+      if (answer === "You could startle the injured person causing further injury") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

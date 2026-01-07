@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CPR Knowledge Check</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 25px;
+    background: #ffffff;
+  }
+
+  .quiz-container {
+    max-width: 800px;
+  }
+
+  .question {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+  .option {
+    margin-bottom: 18px;
+  }
+
+  .option input {
+    margin-right: 10px;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  .feedback {
+    margin-top: 20px;
+    font-weight: bold;
+    display: none;
+  }
+
+  .correct {
+    color: green;
+  }
+
+  .incorrect {
+    color: red;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="quiz-container">
+
+  <div class="question">
+    When giving chest compressions, how far should you push down to ensure
+    that the compression is effective, but minimizes the likelihood of injuring
+    the person?
+  </div>
+
+  <form>
+
+    <div class="option">
+      <input type="radio" name="q3" value="No compressions">
+      You shouldn’t give chest compressions if you don’t want to hurt them
+    </div>
+
+    <div class="option">
+      <input type="radio" name="q3" value="2-3cm">
+      2–3cm
+    </div>
+
+    <div class="option">
+      <input type="radio" name="q3" value="5-6cm">
+      5–6cm
+    </div>
+
+    <div class="option">
+      <input type="radio" name="q3" value="9-10cm">
+      9–10cm
+    </div>
+
+    <button type="button" onclick="submitAnswer()">Submit</button>
+
+  </form>
+
+  <div id="correctFeedback" class="feedback correct">
+    ✅ Correct. Chest compressions should be about 5–6 cm deep in adults.
+  </div>
+
+  <div id="incorrectFeedback" class="feedback incorrect">
+    ❌ Incorrect. The correct depth is approximately 5–6 cm.
+  </div>
+
+</div>
+
+<script>
+function submitAnswer() {
+  const selected = document.querySelector('input[name="q3"]:checked');
+
+  if (!selected) {
+    alert("Please select an answer.");
+    return;
+  }
+
+  const answer = selected.value;
+
+  // Save to localStorage
+  localStorage.setItem("cprDepth_Q3", answer);
+
+  const correctAnswer = "5-6cm";
+
+  if (answer === correctAnswer) {
+    document.getElementById("correctFeedback").style.display = "block";
+    document.getElementById("incorrectFeedback").style.display = "none";
+  } else {
+    document.getElementById("correctFeedback").style.display = "none";
+    document.getElementById("incorrectFeedback").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>

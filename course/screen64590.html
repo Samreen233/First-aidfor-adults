@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Quiz Results</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="resultsBody"></tbody>
+  </table>
+
+  <h2 id="score"></h2>
+
+  <script>
+    /***********************
+     * EXPIRY CONFIG
+     ***********************/
+    const EXPIRY_TIME = 30 * 60 * 1000; // 30 minutes
+    const completedAt = localStorage.getItem("quizCompletedAt");
+
+    if (completedAt) {
+      const now = Date.now();
+      if (now - completedAt > EXPIRY_TIME) {
+        clearQuizData();
+      }
+    }
+
+    /***********************
+     * QUIZ DATA
+     ***********************/
+    const quizData = [
+      {
+        question: "COVID-19 is transmitted from person to person through (select all that apply):",
+        correct: ["Close contact", "Air-borne droplets", "Blood"],
+        key: "q1",
+        multiple: true
+      },
+      {
+        question: "A mask can be used more than one time and can be shared with others. True or False?",
+        correct: ["false"],
+        key: "q2",
+        multiple: false
+      },
+      {
+        question: "It is important to wash your hands only after providing first aid. True or False?",
+        correct: ["false"],
+        key: "q3",
+        multiple: false
+      },
+      {
+        question: "What are the alternatives to soap and water to disinfect your hands? (Select all that apply)",
+        correct: ["Ash", "Hydro-alcoholic solution"],
+        key: "q4",
+        multiple: true
+      }
+    ];
+
+    /***********************
+     * RENDER RESULTS
+     ***********************/
+    let score = 0;
+    let answeredQuestions = 0;
+    const tbody = document.getElementById("resultsBody");
+
+    quizData.forEach(q => {
+      let userAnswer = localStorage.getItem(q.key);
+      let userAnswerArr = [];
+
+      if (q.multiple) {
+        userAnswerArr = userAnswer ? JSON.parse(userAnswer) : [];
+      } else {
+        userAnswerArr = userAnswer ? [userAnswer] : [];
+      }
+
+      if (userAnswerArr.length > 0) answeredQuestions++;
+
+      const correctSorted = q.correct.slice().sort();
+      const userSorted = userAnswerArr.slice().sort();
+
+      const isCorrect =
+        userSorted.length === correctSorted.length &&
+        userSorted.every((val, i) => val === correctSorted[i]);
+
+      if (isCorrect) score++;
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${q.question}</td>
+        <td>${userAnswerArr.length ? userAnswerArr.join(", ") : "No Answer"}</td>
+        <td class="${userAnswerArr.length ? (isCorrect ? "correct" : "incorrect") : ""}">
+          ${userAnswerArr.length ? (isCorrect ? "Correct" : "Incorrect") : "—"}
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("score").innerText =
+      answeredQuestions > 0
+        ? `Total Score: ${score} / ${quizData.length}`
+        : "No quiz attempt found.";
+
+    /***********************
+     * CLEAR FUNCTION
+     ***********************/
+    function clearQuizData() {
+      quizData.forEach(q => localStorage.removeItem(q.key));
+      localStorage.removeItem("quizCompletedAt");
+    }
+
+    /***********************
+     * AUTO CLEAR AFTER VIEW
+     ***********************/
+    setTimeout(() => {
+      clearQuizData();
+    }, 10000); // 10 seconds
+  </script>
+
+</body>
+
+</html>

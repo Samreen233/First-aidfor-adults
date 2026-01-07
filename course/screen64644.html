@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Procurement Assessment - Q32</title>
+
+	<script>
+		function Initialize() { }
+		var isAssessment = true;
+	</script>
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			max-width: 100%;
+			overflow-y: hidden;
+			/* prevent accidental horizontal scroll */
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		ol,
+		li {
+			max-width: 100%;
+			word-wrap: break-word;
+		}
+
+		/* =========================
+       MAIN CONTAINER
+       ========================= */
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 90%;
+			margin: auto;
+			padding: 25px;
+			border-radius: 8px;
+			align-items: flex-start;
+		}
+
+		/* =========================
+       LEFT SIDE
+       ========================= */
+		.left {
+			flex: 1;
+			min-width: 300px;
+		}
+
+		.textHeadline {
+			font-size: 20px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+
+		.textContent p {
+			margin-bottom: 15px;
+			line-height: 1.6;
+		}
+
+		/* =========================
+       RIGHT SIDE
+       ========================= */
+		.right {
+			flex: 0 0 400px;
+			max-width: 100%;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		/* =========================
+       FEEDBACK STYLES
+       ========================= */
+		.feedback {
+			display: none;
+			margin-top: 15px;
+			font-weight: bold;
+		}
+
+		.correct {
+			color: green;
+		}
+
+		.incorrect {
+			color: red;
+		}
+
+		button,
+		input[type="button"] {
+			margin-top: 15px;
+			padding: 8px 16px;
+			cursor: pointer;
+		}
+
+		/* =========================
+       MOBILE FIXES + SCROLLBAR
+       ========================= */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+				overflow-y: auto;
+				/* horizontal scrollbar only on small screens */
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+
+</head>
+
+<body onload="Initialize();">
+
+	<div class="container">
+
+		<!-- LEFT SIDE -->
+		<div class="left">
+			<div class="textHeadline">Other useful signs</div>
+
+			<ul>
+				<li>Sudden difficulty in seeing with one or both eyes. </li>
+				<li>Sudden difficulty in walking, experiencing dizziness, loss of balance or coordination.</li>
+				<li>Sudden severe headache with no known cause. </li>
+				<li>Seizure, even when the person does not suffer from epilepsy.</li>
+			</ul>
+		</div>
+
+		<!-- RIGHT SIDE -->
+		<div class="right">
+			<!-- Example image (optional) -->
+			<img src="../media/content/Screenshot 2026-01-07 112012.png" alt="FAST Stroke Symptoms">
+		</div>
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2: Mask Reuse</title>
+  <script>
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="quizOption"]:checked');
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      // Save user answer in localStorage
+      localStorage.setItem("q2", selected.value);
+
+      const correctAnswer = "false"; // Correct answer is False
+
+      if (selected.value === correctAnswer) {
+        alert("✅ Correct! Masks should NOT be reused or shared with others.");
+        UDUTU_API.goScreen(84443); // Replace with next screen ID
+      } else {
+        alert("❌ Incorrect. Masks should NOT be reused or shared with others.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>A mask can be used more than one time and can be shared with others. True or False?</p>
+
+  <form>
+    <input type="radio" name="quizOption" value="true" id="trueOpt">
+    <label for="trueOpt">True</label><br><br>
+
+    <input type="radio" name="quizOption" value="false" id="falseOpt">
+    <label for="falseOpt">False</label><br><br>
+
+    <button type="button" onclick="checkAnswer()">Submit Answer</button>
+  </form>
+</body>
+</html>

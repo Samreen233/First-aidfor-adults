@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke Assessment Question</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 750px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 14.5px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      As the lady continues to tell you her story, something changes in her voice.
+      As you observe her, you notice that one side of her face seems to have dropped slightly.
+      What do you do?
+    </h2>
+
+    <form>
+      <div class="option">
+        <input type="radio" name="strokeAction" id="opt1"
+          value="Assess using FAST by asking her to smile">
+        <label for="opt1">
+          Assess the lady for a stroke using the FAST technique by starting with asking her to smile to see if it is uneven or lopsided.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeAction" id="opt2"
+          value="Ask her to stand up">
+        <label for="opt2">
+          Assess the lady for a stroke using the FAST technique by starting with asking her to stand up and see if she can move around.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeAction" id="opt3"
+          value="Ask her to lay down">
+        <label for="opt3">
+          Assess the lady for a stroke using the FAST technique by starting with asking her to lay down on her back.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeAction" id="opt4"
+          value="Give water and food">
+        <label for="opt4">
+          Get the lady some water and food if she asks for it.
+        </label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! Using FAST and starting with facial drooping is the right action.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct response is to assess facial drooping using the FAST technique.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="strokeAction"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      // Store answer in localStorage
+      localStorage.setItem("stroke_action_question", selected.value);
+      localStorage.setItem("stroke_action_timestamp", Date.now());
+
+      // Correct answer check
+      if (selected.id === "opt1") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

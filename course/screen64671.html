@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paragraph and Image Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: center;
+    }
+
+    .left {
+      flex: 1;
+    }
+
+    .left p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .right {
+      flex: 0 0 400px;
+    }
+
+    .right img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .right {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left: Paragraph -->
+    <div class="left">
+		<h2>Survey the scene for safety and recognize the dangers</h2>
+      <p>
+      If you encounter a road accident, approach the crash site with caution and assess for immediate danger.
+
+As outlined in the video, ensure that the crash scene is safe and secure for you and the people involved - this includes other road users and bystanders. Remember to keep yourself safe and do not take any unnecessary risks that could put you or others in harms way. 
+
+Assessing for safety is relevant to all situations that may require first aid, however, it is especially important in the case of road accidents. Examples of dangers include fuel leaking from the vehicle, broken glass, risk of fire, and approaching traffic. Can you think of any more?
+      </p>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="right">
+      <img src="../media/content/Screenshot 2026-01-07 124241.png" alt="Sample">
+    </div>
+  </div>
+
+</body>
+</html>

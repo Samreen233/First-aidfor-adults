@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Q1: COVID-19 Transmission</title>
+	<script>
+		function checkAnswer() {
+			const checkboxes = document.querySelectorAll('input[name="quizOption"]:checked');
+			if (checkboxes.length === 0) {
+				alert("Please select at least one option!");
+				return;
+			}
+
+			// Collect selected answers
+			let selected = [];
+			checkboxes.forEach(cb => selected.push(cb.value));
+
+			// Save user answer in localStorage
+			localStorage.setItem("q1", JSON.stringify(selected));
+
+			// Correct answers
+			const correct = ["Close contact", "Air-borne droplets", "Blood"];
+
+			// Check correctness
+			const selectedSorted = selected.slice().sort();
+			const correctSorted = correct.slice().sort();
+
+			let isCorrect = selectedSorted.length === correctSorted.length &&
+				selectedSorted.every((val, idx) => val === correctSorted[idx]);
+
+			if (isCorrect) {
+				alert("✅ Correct! COVID-19 is transmitted through Close contact, Air-borne droplets, and Blood.");
+				UDUTU_API.goScreen(84442); // Next screen ID
+			} else {
+				alert("❌ Incorrect. Correct answers are: Close contact, Air-borne droplets, Blood.");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<p>COVID-19 is transmitted from person to person through (select all that apply):</p>
+
+	<form>
+		<input type="checkbox" name="quizOption" value="Close contact" id="opt1">
+		<label for="opt1">Close contact</label><br><br>
+
+		<input type="checkbox" name="quizOption" value="Air-borne droplets" id="opt2">
+		<label for="opt2">Air-borne droplets</label><br><br>
+
+		<input type="checkbox" name="quizOption" value="Skin" id="opt3">
+		<label for="opt3">Skin</label><br><br>
+
+		<input type="checkbox" name="quizOption" value="Blood" id="opt4">
+		<label for="opt4">Blood</label><br><br>
+
+		<button type="button" onclick="checkAnswer()">Submit Answer</button>
+	</form>
+</body>
+
+</html>

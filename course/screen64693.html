@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burn Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    .result-container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    td.correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    td.incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    .score {
+      text-align: center;
+      font-size: 22px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="result-container">
+    <h1>Burn Quiz Results</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Your Answer</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="resultTableBody">
+        <!-- Results will be inserted here -->
+      </tbody>
+    </table>
+
+    <div class="score" id="score"></div>
+  </div>
+
+  <script>
+    // Correct answers
+    const correctAnswers = {
+      burn_first_aid: "Immediately run cool water over the burnt area",
+      minor_burn_signs: [
+        "The skin around the burn is red and swelling",
+        "The burn is hot and causing pain"
+      ],
+      burn_ice_question: "Ice could potentially damage the skin around the burn",
+      burn_cooling_duration: "True",
+      burn_dressing: "The dressing will help to prevent infection"
+    };
+
+    // User answers from localStorage
+    const userAnswers = {
+      burn_first_aid: localStorage.getItem("burn_first_aid"),
+      minor_burn_signs: JSON.parse(localStorage.getItem("minor_burn_signs") || "[]"),
+      burn_ice_question: localStorage.getItem("burn_ice_question"),
+      burn_cooling_duration: localStorage.getItem("burn_cooling_duration"),
+      burn_dressing: localStorage.getItem("burn_dressing")
+    };
+
+    const tableBody = document.getElementById("resultTableBody");
+    let score = 0;
+
+    // Helper function to create a row
+    function createRow(questionText, userAnswer, isCorrect) {
+      const tr = document.createElement("tr");
+
+      const tdQuestion = document.createElement("td");
+      tdQuestion.textContent = questionText;
+
+      const tdUser = document.createElement("td");
+      tdUser.textContent = Array.isArray(userAnswer) ? userAnswer.join(", ") : userAnswer || "No answer";
+
+      const tdStatus = document.createElement("td");
+      tdStatus.textContent = isCorrect ? "Correct" : "Incorrect";
+      tdStatus.className = isCorrect ? "correct" : "incorrect";
+
+      tr.appendChild(tdQuestion);
+      tr.appendChild(tdUser);
+      tr.appendChild(tdStatus);
+
+      tableBody.appendChild(tr);
+    }
+
+    // Q1
+    const q1Correct = userAnswers.burn_first_aid === correctAnswers.burn_first_aid;
+    if (q1Correct) score++;
+    createRow("First Aid for Burn", userAnswers.burn_first_aid, q1Correct);
+
+    // Q2 (checkbox)
+    const minorCorrect = userAnswers.minor_burn_signs.every(ans => correctAnswers.minor_burn_signs.includes(ans)) &&
+                         userAnswers.minor_burn_signs.length === correctAnswers.minor_burn_signs.length;
+    if (minorCorrect) score++;
+    createRow("Minor Burn Signs", userAnswers.minor_burn_signs, minorCorrect);
+
+    // Q3
+    const q3Correct = userAnswers.burn_ice_question === correctAnswers.burn_ice_question;
+    if (q3Correct) score++;
+    createRow("Ice on Burn", userAnswers.burn_ice_question, q3Correct);
+
+    // Q4
+    const q4Correct = userAnswers.burn_cooling_duration === correctAnswers.burn_cooling_duration;
+    if (q4Correct) score++;
+    createRow("Cooling Duration", userAnswers.burn_cooling_duration, q4Correct);
+
+    // Q5
+    const q5Correct = userAnswers.burn_dressing === correctAnswers.burn_dressing;
+    if (q5Correct) score++;
+    createRow("Dressing the Burn", userAnswers.burn_dressing, q5Correct);
+
+    // Show score
+    document.getElementById("score").textContent = `Your Score: ${score} / 5`;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 3 of 39" closeText="OK">
+    <question>Who are the primary beneficiaries of NIDA-Pakistan’s programs?</question>
+  <answers>
+    <option correct="0" display_order="0" alt="">Only government employees.</option>
+    <option correct="1" display_order="1" alt="">Vulnerable and marginalized communities.</option>
+    <option correct="0" display_order="2" alt="">Urban business owners only.</option>
+    <option correct="0" display_order="3" alt="">International organizations exclusively.</option>
+  </answers>
+  <correct audio="">Correct! NIDA-Pakistan targets vulnerable and marginalized communities.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Vulnerable and marginalized communities.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

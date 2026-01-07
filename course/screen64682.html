@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Road Accident Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* padding: 20px; */
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .expired-message {
+      text-align: center;
+      font-size: 16px;
+      color: red;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Road Accident Quiz Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Your Answer</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="resultsBody"></tbody>
+</table>
+
+<h2 id="score"></h2>
+
+<div class="expired-message" id="expiredMessage" style="display:none;">
+  ⏳ Your quiz results have expired. Please retake the quiz.
+</div>
+
+<script>
+  // Expiry time for results
+  const EXPIRY_TIME = 60 * 60 * 1000; // 60 minutes
+  const completedAt = localStorage.getItem("quizCompletedAt");
+
+  if (!completedAt || (Date.now() - completedAt > EXPIRY_TIME)) {
+    clearQuizData();
+    document.getElementById("resultsBody").style.display = "none";
+    document.getElementById("score").style.display = "none";
+    document.getElementById("expiredMessage").style.display = "block";
+  } else {
+
+    // Quiz questions and correct answers
+    const quizData = [
+      {
+        question: "You are travelling in the passenger seat when the cars behind collide. What should you do?",
+        key: "road_accident_safety",
+        correct: ["Make sure that the area is safe, then go and assess the people in the cars in front to see if they are injured"]
+      },
+      {
+        question: "After securing the first man, what do you do next?",
+        key: "road_accident_next_action",
+        correct: ["Assess the second car for injured people"]
+      },
+      {
+        question: "True or False: You are worried about a blocked airway in a car accident.",
+        key: "road_accident_airway",
+        correct: ["True"]
+      },
+      {
+        question: "Why is it best to avoid getting into the car to help the injured person?",
+        key: "road_accident_avoid_car",
+        correct: ["You could startle the injured person causing further injury"]
+      },
+      {
+        question: "Select the correct steps to clear a person's airway (checkboxes).",
+        key: "road_accident_airway_steps",
+        correct: [
+          "Place one hand on the back of the neck",
+          "Make sure that the person's throat is clear using your fingers to check if anything is blocking their throat",
+          "Slide your hand under the casualty's chin",
+          "Bring the head into a neutral position, in line with the trunk by pulling gently upwards",
+          "Keep this position until the arrival of the emergency services"
+        ],
+        multiple: true
+      }
+    ];
+
+    let score = 0;
+    let answeredQuestions = 0;
+    const tbody = document.getElementById("resultsBody");
+
+    quizData.forEach(q => {
+      let userAnswer = localStorage.getItem(q.key);
+      let displayAnswer = "No Answer";
+
+      let isCorrect = false;
+
+      if (q.multiple) {
+        if (userAnswer) {
+          const selected = JSON.parse(userAnswer);
+          displayAnswer = selected.join(", ");
+          // Compare arrays
+          isCorrect = selected.length === q.correct.length && selected.every(v => q.correct.includes(v));
+        }
+      } else {
+        if (userAnswer) {
+          displayAnswer = userAnswer;
+          isCorrect = q.correct.includes(userAnswer);
+        }
+      }
+
+      if (userAnswer) {
+        answeredQuestions++;
+        if (isCorrect) score++;
+      }
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${q.question}</td>
+        <td>${displayAnswer}</td>
+        <td class="${userAnswer ? (isCorrect ? "correct" : "incorrect") : ""}">
+          ${userAnswer ? (isCorrect ? "Correct" : "Incorrect") : "—"}
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("score").innerText =
+      answeredQuestions > 0
+        ? `Total Score: ${score} / ${quizData.length}`
+        : "No quiz attempt found.";
+  }
+
+  function clearQuizData() {
+    const keys = [
+      "road_accident_safety",
+      "road_accident_next_action",
+      "road_accident_airway",
+      "road_accident_airway_steps",
+      "road_accident_avoid_car",
+      "quizCompletedAt"
+    ];
+    keys.forEach(k => localStorage.removeItem(k));
+  }
+</script>
+
+</body>
+</html>

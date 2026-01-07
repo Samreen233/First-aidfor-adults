@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.right {
+			flex: 1;
+		}
+
+		.right img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		/* Responsive for smaller screens */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right,
+			.left {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="left">
+			<h2>Complications associated with bleeding </h2>
+			<p>Sometimes, there are additional concerns when a person is bleeding. Many of these are unlikely to happen,
+				but being prepared for any issue is important for all first aiders.
+
+				Consider the following: </p>
+			<ul>
+
+				<li>An immediate complication associated with bleeding is shock. Signs of shock in an adult can include
+					paleness, cold and clammy skin, confusion, difficulty breathing and, in very extreme circumstances,
+					the person could become unresponsive. Help the person to lay down and call for medical help
+					immediately if you see any of these signs.</li>
+				<li>The injured person may be distressed, fearful, and/or in pain in a situation where they have
+					experienced an injury and are bleeding. Help them to calm down by reassuring them and explain what
+					you’re doing. We'll learn how to deliver psychological first aid in a later module.</li>
+			</ul>
+		</div>
+
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 114629.png" alt="Sample Image">
+
+		</div>
+	</div>
+
+</body>
+
+</html>

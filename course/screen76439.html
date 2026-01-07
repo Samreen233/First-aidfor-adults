@@ -1,0 +1,94 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Course Menu</title>
+
+	<script>
+		function Initialize() {
+			InitSound();
+		}
+		function InitSound() { }
+		var isAssessment = false;
+	</script>
+
+	<script src="utility.js"></script>
+	<script src="screenUtils.js"></script>
+	<script src="interactiveUtils.js"></script>
+	<script src="jquery.js"></script>
+	<script src="jplayer/jquery.jplayer.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			var i, j, k = 0;
+
+			for (i = 0; i < UDUTU_API.gblModules.length; i++) {
+				j = UDUTU_API.gblModules[i].id;
+
+				switch (j) {
+					case "12208":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li0").addClass('checkmarked'); k++; }
+						break;
+					case "12209":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li1").addClass('checkmarked'); k++; }
+						break;
+					case "12210":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li2").addClass('checkmarked'); k++; }
+						break;
+					case "12211":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li3").addClass('checkmarked'); k++; }
+						break;
+					case "12212":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li4").addClass('checkmarked'); k++; }
+						break;
+					case "12213":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li5").addClass('checkmarked'); k++; }
+						break;
+					case "12214":
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li6").addClass('checkmarked'); k++; }
+						break;
+					case "12215": // ✅ Module 8
+						if (UDUTU_API.evaluateModuleCompletion(UDUTU_API.gblModules[i])) { $("#li7").addClass('checkmarked'); k++; }
+						break;
+				}
+			}
+
+			// Unlock Final Assessment only after all 8 modules
+			// if (k === 8) {
+			// 	$("#li8").css("display", "inline");
+			// }
+		});
+	</script>
+
+	<style>
+		li.checkmarked {
+			list-style-image: url(themes/selkirk/viewed.gif);
+		}
+	</style>
+</head>
+
+<body class="contentBody" onload="Initialize();">
+
+	<div id="UDUTU_Text1" class="text left top textHalfWidth fullHeight">
+		<div class="textHeadline">Menu</div>
+
+		<div class="textContent">
+			<p>This course includes the following:</p>
+
+			<ul style="margin:10px 0;padding-left:10px;list-style-type:square;">
+
+				<li id="li4"><a href="javascript:UDUTU_API.goScreen(64561)">Module 5: First Aid for Adults</a></li>
+
+				<li id="li8" style="display:none;"><a href="javascript:UDUTU_API.goScreen(64696)">Final Assessment</a>
+				</li>
+			</ul>
+
+			<p><strong style="color:#b01c05;">
+					Review each item in order. When finished, select the Final Assessment.
+				</strong></p>
+		</div>
+	</div>
+
+</body>
+
+</html>

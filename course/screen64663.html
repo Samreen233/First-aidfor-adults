@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Aid – Reducing Infection Risk</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 750px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      A group of walkers come around the same corner and notice that you're injured. As one of them sets off to bring their car, you reflect on the situation.<br><br>
+      How could you have reduced the risk of infection when caring for an open, bleeding wound?
+    </h2>
+
+    <form id="quizForm">
+
+      <div class="option">
+        <input type="radio" name="infectionOption" id="opt1" value="Avoid direct skin contact">
+        <label for="opt1">Avoid direct skin to skin contact with blood</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="infectionOption" id="opt2" value="Use protective barriers">
+        <label for="opt2">Use protective barriers such as gloves or a plastic bag for example</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="infectionOption" id="opt3" value="Wash hands">
+        <label for="opt3">Try to wash your hands immediately after giving care</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="infectionOption" id="opt4" value="All of the above">
+        <label for="opt4">All of the above</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! All of these measures help reduce the risk of infection.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answer is "All of the above".
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="infectionOption"]:checked');
+
+      if (!selected) {
+        alert("Please select an option.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("infection_risk_prevention", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answer = "All of the above"
+      const isCorrect = answer === "All of the above";
+
+      if (isCorrect) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

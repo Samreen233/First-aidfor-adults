@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cardiac Arrest Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .quiz-box {
+      max-width: 650px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .option {
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-box">
+    <h3>
+      The best chance of someone recovering from a cardiac arrest relies on:
+      <br><small>(Select all that apply)</small>
+    </h3>
+
+    <div class="option">
+      <input type="checkbox" value="Quick recognition of the cardiac arrest">
+      Quick recognition of the cardiac arrest
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Early access to emergency medical help">
+      Early access to emergency medical help
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Early, high quality CPR">
+      Early, high quality cardiopulmonary resuscitation (CPR)
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Early defibrillation">
+      Early defibrillation (if available)
+    </div>
+
+    <button onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const correctAnswers = [
+        "Quick recognition of the cardiac arrest",
+        "Early access to emergency medical help",
+        "Early, high quality CPR",
+        "Early defibrillation"
+      ];
+
+      const selected = [];
+      document
+        .querySelectorAll('input[type="checkbox"]:checked')
+        .forEach(cb => selected.push(cb.value));
+
+      if (selected.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
+
+      // Save answer
+      localStorage.setItem("cardiacArrestQuiz_Q1", JSON.stringify(selected));
+
+      // Check correctness
+      const isCorrect =
+        selected.length === correctAnswers.length &&
+        selected.every(ans => correctAnswers.includes(ans));
+
+      if (isCorrect) {
+        alert("✅ Correct! These steps form the Chain of Survival.");
+      } else {
+        alert("❌ Incorrect. All listed actions are critical for survival.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

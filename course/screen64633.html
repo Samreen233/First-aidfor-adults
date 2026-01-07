@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Unresponsive Friend – CPR Action</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      Your friend has become unresponsive and is not breathing normally.<br><br>
+      What action should you take?
+    </h2>
+
+    <form>
+
+      <div class="option">
+        <input type="radio" name="mcAnswer" id="opt1" value="Instruct someone to call for help and begin CPR immediately">
+        <label for="opt1">Instruct someone to call for help and begin CPR immediately</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="mcAnswer" id="opt2" value="Run for help immediately">
+        <label for="opt2">Run for help immediately</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="mcAnswer" id="opt3" value="Continue to give back blows and abdominal thrusts">
+        <label for="opt3">Continue to give back blows and abdominal thrusts</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="mcAnswer" id="opt4" value="Make sure that your friend is warm and monitor them until help arrives">
+        <label for="opt4">Make sure that your friend is warm and monitor them until help arrives</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! You should instruct someone to call for help and begin CPR immediately.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct action is to call for help and start CPR immediately.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="mcAnswer"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("unresponsive_friend_mc", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Show feedback
+      if (answer === "Instruct someone to call for help and begin CPR immediately") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

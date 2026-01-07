@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke Awareness – True or False</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      True or False: The signs of a stroke appear gradually, sometimes over several hours.
+    </h2>
+
+    <form>
+      <div class="option">
+        <input type="radio" name="strokeSigns" id="true" value="True">
+        <label for="true">True</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeSigns" id="false" value="False">
+        <label for="false">False</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! Stroke symptoms usually appear suddenly, not gradually.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. Stroke symptoms usually appear suddenly and require immediate action.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="strokeSigns"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Store answer in localStorage
+      localStorage.setItem("stroke_signs_tf", answer);
+      localStorage.setItem("stroke_signs_timestamp", Date.now());
+
+      if (answer === "False") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

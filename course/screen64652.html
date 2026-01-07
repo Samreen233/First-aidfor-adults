@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke & FAST Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .expired-message {
+      text-align: center;
+      font-size: 16px;
+      color: red;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Stroke & FAST Quiz Results</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="resultsBody"></tbody>
+  </table>
+
+  <h2 id="score"></h2>
+
+  <div class="expired-message" id="expiredMessage" style="display:none;">
+    ⏳ Your quiz results have expired. Please retake the quiz.
+  </div>
+
+  <script>
+    /***********************
+     * EXPIRY CONFIG
+     ***********************/
+    const EXPIRY_TIME = 60 * 60 * 1000; // 60 minutes
+    const completedAt = localStorage.getItem("quizCompletedAt");
+
+    if (!completedAt || (Date.now() - completedAt > EXPIRY_TIME)) {
+      clearQuizData();
+      document.getElementById("resultsBody").style.display = "none";
+      document.getElementById("score").style.display = "none";
+      document.getElementById("expiredMessage").style.display = "block";
+    } else {
+
+      /***********************
+       * QUIZ DATA
+       * key = localStorage key
+       ***********************/
+      const quizData = [
+        {
+          question: "Describe a stroke",
+          key: "stroke_definition_mc",
+          correct: ["A stroke occurs when the blood supply to part of the brain is cut off"]
+        },
+        {
+          question: "True or false. The signs of a stroke appear gradually, sometimes over several hours.",
+          key: "stroke_gradual_tf",
+          correct: ["False"]
+        },
+        {
+          question: "FAST assessment: What do you do when one side of the face droops?",
+          key: "stroke_fast_smile_mc",
+          correct: ["Assess the lady for a stroke using the FAST technique by starting with asking her to smile to see if it is uneven or lopsided."]
+        },
+        {
+          question: "True or false. You should not ask the person to stand up and move if you suspect a stroke.",
+          key: "stroke_movement_tf",
+          correct: ["True"]
+        },
+        {
+          question: "FAST assessment: What is the final step?",
+          key: "fast_final_step",
+          correct: ["Time to call for help"]
+        }
+      ];
+
+      /***********************
+       * RENDER RESULTS
+       ***********************/
+      let score = 0;
+      let answeredQuestions = 0;
+      const tbody = document.getElementById("resultsBody");
+
+      quizData.forEach(q => {
+        let userAnswer = localStorage.getItem(q.key);
+        let displayAnswer = userAnswer || "No Answer";
+
+        const isCorrect = userAnswer && q.correct.includes(userAnswer);
+        if (isCorrect) score++;
+        if (userAnswer) answeredQuestions++;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${q.question}</td>
+          <td>${displayAnswer}</td>
+          <td class="${userAnswer ? (isCorrect ? "correct" : "incorrect") : ""}">
+            ${userAnswer ? (isCorrect ? "Correct" : "Incorrect") : "—"}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById("score").innerText =
+        answeredQuestions > 0
+          ? `Total Score: ${score} / ${quizData.length}`
+          : "No quiz attempt found.";
+    }
+
+    /***********************
+     * CLEAR FUNCTION
+     ***********************/
+    function clearQuizData() {
+      const keys = [
+        "stroke_definition_mc",
+        "stroke_gradual_tf",
+        "stroke_fast_smile_mc",
+        "stroke_movement_tf",
+        "fast_final_step",
+        "quizCompletedAt"
+      ];
+      keys.forEach(k => localStorage.removeItem(k));
+    }
+
+    /***********************
+     * AUTO CLEAR AFTER VIEW
+     ***********************/
+    setTimeout(() => {
+      clearQuizData();
+    }, 10 * 1000); // clear after 10 seconds
+  </script>
+</body>
+</html>

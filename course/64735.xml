@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Module 7: Safeguarding – Question 3" closeText="OK">
+    <question>How should staff report a suspected safeguarding concern or violation?</question>
+  <answers>
+    <option correct="1" display_order="0" alt="">Immediately report through designated reporting channels, maintaining confidentiality and following organizational procedures.</option>
+    <option correct="0" display_order="1" alt="">Discuss the concern only with colleagues informally before reporting.</option>
+    <option correct="0" display_order="2" alt="">Ignore minor concerns unless a manager notices them.</option>
+    <option correct="0" display_order="3" alt="">Wait for the annual review to report incidents.</option>
+  </answers>
+  <correct audio="">Correct! All concerns must be reported promptly and through official channels to ensure accountability and protection.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Immediately report through designated reporting channels, maintaining confidentiality and following organizational procedures.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Procurement Assessment - Q31</title>
+
+  <script>
+    function Initialize() { InitSound(); }
+    function InitSound() { }
+    var isAssessment = true;
+  </script>
+
+  <script src="utility.js"></script>
+  <script src="screenUtils.js"></script>
+  <script src="interactiveUtils.js"></script>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+
+  <style>
+    .mcq-option {
+      margin-bottom: 10px;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+
+  <script>
+    function checkAnswerQ31() {
+      var correct = document.getElementById("q31a1").checked;
+      document.getElementById("correctFeedbackQ31").style.display = correct ? "block" : "none";
+      document.getElementById("incorrectFeedbackQ31").style.display = correct ? "none" : "block";
+    }
+  </script>
+
+</head>
+
+<body class="contentBody" onload="Initialize();">
+
+  <div id="UDUTU_Text31" class="text left top textHalfWidth fullHeight">
+    <div class="textHeadline">Scenario 2</div>
+    <div class="textContent">
+
+      <p>The person shows signs of complete airway obstruction but is still responsive. In this case, there is no time
+        to waste:</p>
+      <ul>
+        <li>Give five targeted back blows to try and dislodge the obstruction</li>
+        <li>Call for help or shout for someone else to get help whilst simultaneously providing back blows</li>
+        <li>If five back blows fail to relieve the obstruction, move on to giving up to five abdominal thrusts (Heimlich
+          maneuver)</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

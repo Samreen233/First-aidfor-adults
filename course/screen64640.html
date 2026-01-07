@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Stroke Symptoms – FAST Acronym</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      Do you already know the acronym that can be used to recognize the symptoms of a stroke?
+    </h2>
+
+    <form>
+
+      <div class="option">
+        <input type="radio" name="strokeAnswer" id="opt1"
+          value="FACE (face drooping, arm weakness, cramp, emergency phone line)">
+        <label for="opt1">
+          FACE (face drooping, arm weakness, cramp, emergency phone line)
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeAnswer" id="opt2"
+          value="FAST (face drooping, arm weakness, speech difficulty, time to call for help)">
+        <label for="opt2">
+          FAST (face drooping, arm weakness, speech difficulty, time to call for help)
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeAnswer" id="opt3"
+          value="FUN (face drooping, unaware, now is time to call for help)">
+        <label for="opt3">
+          FUN (face drooping, unaware, now is time to call for help)
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeAnswer" id="opt4"
+          value="FALSE (face drooping, arm weakness, lose grip, shiver, emergency phone line)">
+        <label for="opt4">
+          FALSE (face drooping, arm weakness, lose grip, shiver, emergency phone line)
+        </label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! FAST is the correct acronym used to recognize stroke symptoms.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct acronym is FAST.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="strokeAnswer"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save answer
+      localStorage.setItem("stroke_fast_mc", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      if (answer.startsWith("FAST")) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

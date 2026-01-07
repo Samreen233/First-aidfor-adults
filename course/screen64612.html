@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CPR Knowledge Check</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 25px;
+      background: #ffffff;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+    }
+
+    .question {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .option {
+      margin-bottom: 18px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <p>
+      After providing 30 chest compressions, you move on to give two rescue
+      breaths. How do you know when you have given an effective rescue breath?
+    </p>
+
+    <form id="quizForm">
+
+      <div class="option">
+        <input type="radio" name="q_rescue" value="chest_rises" id="o1">
+        <label for="o1">
+          You know you’ve given an effective rescue breath when their chest rises
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="q_rescue" value="blown_hard" id="o2">
+        <label for="o2">
+          You know you’ve given an effective rescue breath when you’ve blown as hard as you can
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="q_rescue" value="no_way" id="o3">
+        <label for="o3">
+          There is no way to know if you’re doing it right
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="q_rescue" value="one_blow" id="o4">
+        <label for="o4">
+          You know you’ve given an effective rescue breath when you use all of your breath in one blow
+        </label>
+      </div>
+
+      <button type="button" onclick="checkAnswer()">Submit</button>
+
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✔ Correct
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ✖ Incorrect
+    </div>
+
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const selected = document.querySelector('input[name="q_rescue"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      // Save answer in localStorage
+      localStorage.setItem("q_rescue", selected.value);
+
+      // Save completion timestamp (for expiry system)
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answer value
+      const correctAnswer = "chest_rises";
+
+      document.getElementById("correctFeedback").style.display = "none";
+      document.getElementById("incorrectFeedback").style.display = "none";
+
+      if (selected.value === correctAnswer) {
+        document.getElementById("correctFeedback").style.display = "block";
+      } else {
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

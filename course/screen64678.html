@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Road Accident – Next Action</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      You rush to the first car where you find a man who appears shaken but physically unharmed. You instruct the man to move behind the safety barrier. Another bystander tells you that they have called for help. What do you do now?
+    </h2>
+
+    <form id="quizForm">
+      <div class="option">
+        <input type="radio" name="nextAction" id="opt1" value="Stay with the man to ensure that he is ok">
+        <label for="opt1">Stay with the man to ensure that he is ok</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="nextAction" id="opt2" value="Take the man to your car and rush him to hospital">
+        <label for="opt2">Take the man to your car and rush him to hospital</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="nextAction" id="opt3" value="Go and help your friend to slow down the oncoming traffic">
+        <label for="opt3">Go and help your friend to slow down the oncoming traffic</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="nextAction" id="opt4" value="Assess the second car for injured people">
+        <label for="opt4">Assess the second car for injured people</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! After ensuring the first man is safe, you should assess the second car for injured people.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct action is to assess the second car for injured people after securing the first man.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="nextAction"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("road_accident_next_action", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answer = "Assess the second car for injured people"
+      if (answer === "Assess the second car for injured people") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

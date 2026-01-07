@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+			align-items: center;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.left p {
+			font-size: 18px;
+			line-height: 1.6;
+		}
+
+		.right {
+			flex: 0 0 400px;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+			display: block;
+		}
+
+		/* Responsive: stack on small screens */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Left: Paragraph -->
+		<div class="left">
+			<h2>Call for help</h2>
+			<p>
+				If your initial assessment of the situation indicates that the injured person(s) needs medical
+				attention, call for help or ask someone else to call for help.
+
+				Do not move an injured person unless the situation is life-threatening (e.g. a fire in the car), as you
+				may cause further harm, especially in the case of neck and spinal injuries. If the situation is
+				life-threatening and the person needs to be moved urgently, do so as a last resort without endangering
+				yourself and those around you.
+			</p>
+		</div>
+
+		<!-- Right: Image -->
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 124241.png" alt="Sample">
+		</div>
+	</div>
+
+</body>
+
+</html>

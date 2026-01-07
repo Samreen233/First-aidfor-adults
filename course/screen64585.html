@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Q4: Alternatives to Soap</title>
+  <script>
+    function checkAnswer() {
+      const checkboxes = document.querySelectorAll('input[name="quizOption"]:checked');
+
+      if (checkboxes.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
+
+      // Collect selected answers
+      let selected = [];
+      checkboxes.forEach(cb => selected.push(cb.value));
+
+      // Save user answer in localStorage as JSON
+      localStorage.setItem("q4", JSON.stringify(selected));
+
+      // Correct answers
+      const correct = ["Ash", "Hydro-alcoholic solution"];
+
+      // Sort arrays to compare
+      const selectedSorted = selected.slice().sort();
+      const correctSorted = correct.slice().sort();
+
+      // Check if user selected all correct options exactly
+      const isCorrect = selectedSorted.length === correctSorted.length &&
+        selectedSorted.every((val, idx) => val === correctSorted[idx]);
+
+      if (isCorrect) {
+        alert("✅ Correct! Ash and Hydro-alcoholic solutions are effective alternatives to soap and water.");
+        UDUTU_API.goScreen(84445); // Next screen ID
+      } else {
+        alert("❌ Incorrect. The correct answers are: Ash and Hydro-alcoholic solution.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <p>What are the alternatives to soap and water to disinfect your hands? (Select all that apply)</p>
+
+  <form>
+    <input type="checkbox" name="quizOption" value="Aloe vera" id="optA">
+    <label for="optA">Aloe vera</label><br><br>
+
+    <input type="checkbox" name="quizOption" value="Ash" id="optB">
+    <label for="optB">Ash</label><br><br>
+
+    <input type="checkbox" name="quizOption" value="Hydro-alcoholic solution" id="optC">
+    <label for="optC">Hydro-alcoholic solution</label><br><br>
+
+    <input type="checkbox" name="quizOption" value="None" id="optD">
+    <label for="optD">None</label><br><br>
+
+    <button type="button" onclick="checkAnswer()">Submit Answer</button>
+  </form>
+</body>
+
+</html>

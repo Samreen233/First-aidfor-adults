@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+			align-items: center;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.left p {
+			font-size: 18px;
+			line-height: 1.3;
+		}
+
+		ol li {
+			margin: 8px;
+		}
+
+		.right {
+			flex: 0 0 400px;
+		}
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+			display: block;
+		}
+
+		/* Responsive: stack on small screens */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Left: Paragraph -->
+		<div class="left">
+			<h2>Clearing the airway</h2>
+			<ol>
+				<li>Place one hand at the back of the neck and slide the other hand under the person’s chin</li>
+				<li>Bring the head into a neutral position, in line with the trunk by pulling gently upwards. This
+					gentle pulling relieves the cervical column of the weight of the casualty’s head. This opens the
+					airway. Check to see if they’re breathing by listening, feeling, and looking for breaths as learned
+					in the ABCs of first aid</li>
+				<li>Keep this position until emergency services arrives. If the person is responsive, try to keep them
+					calm and reassure them that help is on the way. Encourage them to remain in that position if it is
+					safe to do so, especially as they may have serious neck, head or spinal injuries</li>
+			</ol>
+			<p>If the person is unresponsive, not breathing, and for whatever reason they also cannot be removed from
+				the car safely to give CPR, you should keep their airway open, try to give mouth to mouth resuscitation
+				if you are able to do so, and call for help.</p>
+		</div>
+
+		<!-- Right: Image -->
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 125409.png" alt="Sample">
+		</div>
+	</div>
+
+</body>
+
+</html>

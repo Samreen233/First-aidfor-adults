@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1000px;
+			margin: auto;
+			/* padding: 20px; */
+			border-radius: 8px;
+			align-items: center;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.left p {
+			font-size: 18px;
+			line-height: 1.6;
+		}
+
+		/* .right {
+			flex: 0 0 400px;
+		} */
+
+		.right img {
+			width: 100%;
+			border-radius: 8px;
+			display: block;
+		}
+
+		/* Responsive: stack on small screens */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Left: Paragraph -->
+		<div class="left">
+			<h3>COVID-19 and bleeding</h3>
+			<p>
+				When providing first aid for bleeding, wounds, or abrasions, no changes need to be made in the context
+				of COVID-19. This also applies to the treatment of minor burns, which we cover in Module 7. Remember,
+				COVID-19 is not transmitted through skin or blood.
+				If the person you are treating has a known or suspected infectious disease, follow the protective
+				measures described in lesson 1 and monitor the causality while waiting for relief or medical advice.
+				<br>
+				Encourage the causality to provide first aid on themselves. If they are unable to, the first aider
+				should provide first aid, wearing gloves or using another barrier, such as plastic bags.
+				<br>
+				For severe bleeding, you can show the causality (or their family member, if present) how to apply a
+				compression dressing by demonstrating on your own thigh or leg, so that you can maintain appropriate
+				distancing. Call emergency services immediately.
+		</div>
+
+		<!-- Right: Image -->
+		<div class="right">
+			<!-- <img src="../media/content/Screenshot 2026-01-07 122619.png" alt="Sample"> -->
+		</div>
+	</div>
+
+</body>
+
+</html>

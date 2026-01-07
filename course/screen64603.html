@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quick Knowledge Check</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .quiz-box {
+      max-width: 650px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .option {
+      margin-bottom: 10px;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-box">
+    <h3>
+      Quick knowledge check. Select all that apply.
+    </h3>
+
+    <p><strong>The best chance of recovery from cardiac arrest relies on:</strong></p>
+
+    <div class="option">
+      <input type="checkbox" value="Quick recognition">
+      Quick recognition of the cardiac arrest
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Waking person">
+      Waking the person as quickly as possible
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Early defibrillation">
+      Early defibrillation
+    </div>
+
+    <div class="option">
+      <input type="checkbox" value="Abdominal thrusts">
+      Delivering effective abdominal thrusts
+    </div>
+
+    <button onclick="checkAnswer()">Check Answer</button>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! Quick recognition and early defibrillation are critical for survival.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answers are quick recognition of cardiac arrest and early defibrillation.
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const correctAnswers = [
+        "Quick recognition",
+        "Early defibrillation"
+      ];
+
+      const selected = [];
+      document
+        .querySelectorAll('input[type="checkbox"]:checked')
+        .forEach(cb => selected.push(cb.value));
+
+      if (selected.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
+
+      // Save response
+      localStorage.setItem("cardiacKnowledgeCheck_Q1", JSON.stringify(selected));
+
+      const isCorrect =
+        selected.length === correctAnswers.length &&
+        selected.every(ans => correctAnswers.includes(ans));
+
+      document.getElementById("correctFeedback").style.display = isCorrect ? "block" : "none";
+      document.getElementById("incorrectFeedback").style.display = isCorrect ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>

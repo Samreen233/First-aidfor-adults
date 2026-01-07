@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burn Care – Cooling Duration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      /* background-color: #fff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: left;
+    }
+
+    .option {
+      margin-bottom: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      After two minutes of cooling, the teacher of the cooking class comes over and asks what has happened. You explain and the teacher instructs your partner to keep the burn under cool water for a minimum of 10 minutes until the pain eases. True or False: is 10 minutes of cooling recommended by best practice?
+    </h2>
+
+    <form id="coolingForm">
+      <div class="option">
+        <input type="radio" name="coolingOption" id="trueOpt" value="True">
+        <label for="trueOpt">True</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="coolingOption" id="falseOpt" value="False">
+        <label for="falseOpt">False</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! Best practice recommends cooling a minor burn under running water for at least 10 minutes.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answer is True – a minimum of 10 minutes of cooling is recommended.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="coolingOption"]:checked');
+
+      if (!selected) {
+        alert("Please select True or False.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save answer in localStorage
+      localStorage.setItem("burn_cooling_duration", answer);
+      localStorage.setItem("burn_cooling_time", Date.now());
+
+      // Correct answer
+      if (answer === "True") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

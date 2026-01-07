@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 6 of 39" closeText="OK">
+    <question>Who is expected to comply with NIDA-Pakistan’s Code of Conduct?</question>
+  <answers>
+    <option correct="1" display_order="0" alt="">All employees, volunteers, partners, and contributors associated with NIDA-Pakistan.</option>
+    <option correct="0" display_order="1" alt="">Only full-time employees at head office.</option>
+    <option correct="0" display_order="2" alt="">Only external consultants and contractors.</option>
+    <option correct="0" display_order="3" alt="">Only members of the governing board.</option>
+  </answers>
+  <correct audio="">Correct! The Code of Conduct applies to everyone associated with NIDA-Pakistan.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: All employees, volunteers, partners, and contributors associated with NIDA-Pakistan.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

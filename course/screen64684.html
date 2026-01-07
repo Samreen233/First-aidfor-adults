@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>First Aid for Minor Burns</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background-color: #f5f5f5;
+		}
+
+		.container {
+			display: flex;
+			gap: 30px;
+			max-width: 1200px;
+			margin: auto;
+			align-items: flex-start;
+		}
+
+		/* Left side: paragraph */
+		.left {
+			flex: 1;
+		}
+
+		.left p {
+			font-size: 16px;
+			line-height: 1.6;
+			color: #333;
+			margin-bottom: 15px;
+		}
+
+		/* Right side: video */
+		.right {
+			flex: 1;
+		}
+
+		.right video {
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		/* Responsive: stack on small screens */
+		@media (max-width: 900px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right video {
+				margin-top: 20px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<!-- Left side: Paragraph -->
+		<div class="left">
+			<h1>First Aid for Minor Burns</h1>
+			<p>In this step, we’ll learn the key first aid techniques to use when someone experiences a minor burn or
+				scald. A burn is considered minor when it is half the size of the victim’s hand.</p>
+			<p>Minor burns that are no larger than half the size of a person's hand can usually be treated without the
+				need for further medical attention. In fact, evidence shows that with immediate cooling, infection
+				rates, pain levels, and the depth of a burn can be significantly reduced. It also reduces the need for
+				admittance to a medical facility.
+
+				How do we know when a burn is minor? The skin will appear red, hot, and swollen but not broken. This is
+				important, as burns where the skin is broken are not minor and require further medical attention. This
+				module only addresses first aid for minor burns. </p>
+		</div>
+
+		<!-- Right side: Video -->
+		<div class="right">
+			<iframe width="495" height="303" src="https://www.youtube.com/embed/8KXBk8WIc50" title="Learn first aid gestures: Minor Burn" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+	</div>
+
+</body>
+
+</html>

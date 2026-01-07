@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding Stroke</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      Imagine that it's a weekend and you've decided to take a walk around the lake near your house.
+      Halfway through your walk, you stop to rest and begin talking to an elderly woman.
+      She tells you she had a stroke two years ago.<br><br>
+      From the options below, what answer best describes a stroke?
+    </h2>
+
+    <form>
+
+      <div class="option">
+        <input type="radio" name="strokeDefinition" id="opt1"
+          value="Eyes become blurred">
+        <label for="opt1">
+          A stroke occurs when someone's eyes become blurred.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeDefinition" id="opt2"
+          value="Blood supply to lungs cut off">
+        <label for="opt2">
+          A stroke occurs when the blood supply to part of the lungs is cut off.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeDefinition" id="opt3"
+          value="Blood supply to brain cut off">
+        <label for="opt3">
+          A stroke occurs when the blood supply to part of the brain is cut off.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeDefinition" id="opt4"
+          value="Blood supply to bottom half cut off">
+        <label for="opt4">
+          A stroke occurs when the blood supply is cut off from the bottom half of someone's body.
+        </label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="strokeDefinition" id="opt5"
+          value="Blood supply to top half cut off">
+        <label for="opt5">
+          A stroke occurs when the blood supply is cut off from the top half of someone's body.
+        </label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! A stroke happens when blood supply to part of the brain is interrupted.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. A stroke occurs when the blood supply to part of the brain is cut off.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="strokeDefinition"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("stroke_definition_mc", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      if (answer === "Blood supply to brain cut off") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

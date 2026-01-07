@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 13 of 39" closeText="OK">
+    <question>Which category of employees may be deputed to projects or emergency assignments while retaining their substantive status?</question>
+  <answers>
+    <option correct="1" display_order="0" alt="">Regular/Permanent Employees of the Senior Management Team.</option>
+    <option correct="0" display_order="1" alt="">Temporary Employees.</option>
+    <option correct="0" display_order="2" alt="">Support Staff.</option>
+    <option correct="0" display_order="3" alt="">Contract Consultants.</option>
+  </answers>
+  <correct audio="">Correct! SMT members may be assigned to projects while maintaining permanent status.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Regular/Permanent Employees of the Senior Management Team.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
+</content>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAST Assessment – Stroke Question</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 750px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      You see that the lady's face has dropped, she's struggling to talk clearly,
+      and now she's unable to raise one of her arms. She's having a stroke.
+      What is the final step of the FAST assessment?
+    </h2>
+
+    <form>
+      <div class="option">
+        <input type="radio" name="fastFinal" id="opt1" value="Time for rescue breaths">
+        <label for="opt1">Time for rescue breaths.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="fastFinal" id="opt2" value="Time for chest compressions">
+        <label for="opt2">Time for chest compressions.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="fastFinal" id="opt3" value="Time for CPR">
+        <label for="opt3">Time for CPR.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="fastFinal" id="opt4" value="Time to call for help">
+        <label for="opt4">Time to call for help.</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! The final step of FAST is **Time to call for help**.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answer is **Time to call for help**.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="fastFinal"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      // Store answer in localStorage
+      localStorage.setItem("fast_final_step", selected.value);
+      localStorage.setItem("fast_final_step_time", Date.now());
+
+      // Correct answer
+      if (selected.value === "Time to call for help") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

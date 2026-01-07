@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burn Care – Ice Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      /* background-color: #fff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: left;
+    }
+
+    .option {
+      margin-bottom: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      Why is it important not to use ice on a burn?
+    </h2>
+
+    <form id="iceForm">
+      <div class="option">
+        <input type="radio" name="iceOption" id="opt1" value="Ice could potentially damage the skin around the burn">
+        <label for="opt1">Ice could potentially damage the skin around the burn</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="iceOption" id="opt2" value="Ice would mask the pain and it is important that you can tell if the burn is painful or not">
+        <label for="opt2">Ice would mask the pain and it is important that you can tell if the burn is painful or not</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="iceOption" id="opt3" value="Ice could stop the blood flow to the hand">
+        <label for="opt3">Ice could stop the blood flow to the hand</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="iceOption" id="opt4" value="The cold could cause the injured person to fall into shock">
+        <label for="opt4">The cold could cause the injured person to fall into shock</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! Ice can further damage the skin and tissues of a burn.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answer is that ice can damage the skin around the burn.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="iceOption"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save selected answer in localStorage
+      localStorage.setItem("burn_ice_question", answer);
+      localStorage.setItem("burn_ice_time", Date.now());
+
+      // Correct answer
+      if (answer === "Ice could potentially damage the skin around the burn") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

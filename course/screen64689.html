@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minor Burn Signs Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      /* background-color: #fff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+      color: #333;
+    }
+
+    .option {
+      margin-bottom: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      You correctly identify that this is a minor burn and move quickly to cool it.
+      What other signs indicate that this could be a minor burn? Select all that apply.
+    </h2>
+
+    <form id="minorBurnForm">
+      <div class="option">
+        <input type="checkbox" id="opt1" value="The burned area of skin is black">
+        <label for="opt1">The burned area of skin is black</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="opt2" value="The burned area has blisters">
+        <label for="opt2">The burned area has blisters</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="opt3" value="The skin around the burn is red and swelling">
+        <label for="opt3">The skin around the burn is red and swelling</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="opt4" value="The burn is hot and causing pain">
+        <label for="opt4">The burn is hot and causing pain</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="opt5" value="All of the above">
+        <label for="opt5">All of the above</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! Minor burns usually involve redness, swelling, and pain, but no blackened skin or blisters.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. Minor burns do NOT include blackened skin or blisters. Only redness, swelling, and pain are signs.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                            .map(el => el.value);
+
+      if (selected.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
+
+      // Save selected answers in localStorage
+      localStorage.setItem("minor_burn_signs", JSON.stringify(selected));
+      localStorage.setItem("minor_burn_time", Date.now());
+
+      // Correct answer = "The skin around the burn is red and swelling" and "The burn is hot and causing pain"
+      const correctAnswers = [
+        "The skin around the burn is red and swelling",
+        "The burn is hot and causing pain"
+      ];
+
+      const isCorrect = selected.every(ans => correctAnswers.includes(ans)) &&
+                        selected.length === correctAnswers.length;
+
+      if (isCorrect) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

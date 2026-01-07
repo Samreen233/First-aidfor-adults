@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Road Accident – Clear Airway Steps</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      /* background: #fff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 3px 12px rgba(0,0,0,0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      Select the correct steps to clear a person's airway after a car accident:
+    </h2>
+
+    <form id="airwayForm">
+      <div class="option">
+        <input type="checkbox" id="step1" value="Place one hand on the back of the neck">
+        <label for="step1">Place one hand on the back of the neck</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="step2" value="Make sure that the person's throat is clear using your fingers to check if anything is blocking their throat">
+        <label for="step2">Make sure that the person's throat is clear using your fingers to check if anything is blocking their throat</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="step3" value="Give them mouth to mouth resuscitation and look for their chest rising">
+        <label for="step3">Give them mouth to mouth resuscitation and look for their chest rising</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="step4" value="Slide your hand under the casualty's chin">
+        <label for="step4">Slide your hand under the casualty's chin</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="step5" value="Bring the head into a neutral position, in line with the trunk by pulling gently upwards">
+        <label for="step5">Bring the head into a neutral position, in line with the trunk by pulling gently upwards</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" id="step6" value="Keep this position until the arrival of the emergency services">
+        <label for="step6">Keep this position until the arrival of the emergency services</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! These are the right steps to clear a person's airway in this situation.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. Make sure you only select the correct steps to clear the airway safely.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                            .map(el => el.value);
+
+      if (selected.length === 0) {
+        alert("Please select at least one step.");
+        return;
+      }
+
+      // Save selected answers in localStorage
+      localStorage.setItem("road_accident_airway_steps", JSON.stringify(selected));
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct steps = 1,2,4,5,6 (exclude mouth-to-mouth at this point)
+      const correctSteps = [
+        "Place one hand on the back of the neck",
+        "Make sure that the person's throat is clear using your fingers to check if anything is blocking their throat",
+        "Slide your hand under the casualty's chin",
+        "Bring the head into a neutral position, in line with the trunk by pulling gently upwards",
+        "Keep this position until the arrival of the emergency services"
+      ];
+
+      const isCorrect = selected.every(s => correctSteps.includes(s)) && selected.length === correctSteps.length;
+
+      if (isCorrect) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

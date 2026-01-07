@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paragraph and Image Layout</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			background: #f4f4f4;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			max-width: 1000px;
+			margin: auto;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		.left {
+			flex: 1;
+		}
+
+		.right {
+			flex: 1;
+		}
+
+		.right img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		/* Responsive for smaller screens */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.right,
+			.left {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="left">
+			<h2>Key points on stroke</h2>
+			<p>
+				Make sure that you can recognize the signs of a stroke. The faster that you can recognize the symptoms,
+				the more quickly you can help the person get treatment.
+
+				Remember, use the technique FAST to recognize the signs and act appropriately.
+			</p>
+			<p>t is also useful to record the estimated time at which the person started displaying symptoms to share
+				with medical services.
+
+				Whilst waiting for medical help, make sure that you regularly check their breathing and whether they are
+				responsive - don’t forget the key lessons we covered earlier in this week.
+
+				Make sure that the person is comfortable and ensure that they do not eat or drink as this could cause
+				further complications.</p>
+		</div>
+
+		<div class="right">
+			<img src="../media/content/Screenshot 2026-01-07 114202.png" alt="Sample Image">
+		</div>
+	</div>
+
+</body>
+
+</html>

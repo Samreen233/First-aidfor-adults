@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Road Accident Safety Question</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 800px;
+      margin: auto;
+      /* background: #fff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      You are travelling in the passenger seat of your friend's car when the car in front suddenly brakes hard. Your friend stops, but the cars behind collide. Your friend switches on warning lights, wears a bright jacket, and goes to slow oncoming traffic. What should you do?
+    </h2>
+
+    <form id="quizForm">
+      <div class="option">
+        <input type="radio" name="safetyOption" id="opt1" value="Stay in the car where it is safe">
+        <label for="opt1">Stay in the car where it is safe.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="safetyOption" id="opt2" value="Get out of your car and try to push the other cars out of the way of the road">
+        <label for="opt2">Get out of your car and try to push the other cars out of the way of the road.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="safetyOption" id="opt3" value="Make sure that the area is safe, then go and assess the people in the cars in front to see if they are injured">
+        <label for="opt3">Make sure that the area is safe, then go and assess the people in the cars in front to see if they are injured.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="safetyOption" id="opt4" value="Immediately remove the injured people from the cars in front as fast as possible and bring them to safety">
+        <label for="opt4">Immediately remove the injured people from the cars in front as fast as possible and bring them to safety.</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="safetyOption" id="opt5" value="Run back to help your friend warn the oncoming cars">
+        <label for="opt5">Run back to help your friend warn the oncoming cars.</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! The best first step is to make sure the area is safe, then assess the people in the cars for injuries.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. You should first ensure the area is safe, then assess the injured people.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="safetyOption"]:checked');
+
+      if (!selected) {
+        alert("Please select an answer.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("road_accident_safety", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answer = option 3
+      if (answer === "Make sure that the area is safe, then go and assess the people in the cars in front to see if they are injured") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

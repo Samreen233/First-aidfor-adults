@@ -1,0 +1,143 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Untitled Page</title>
+	<script>function Initialize() { InitSound(); } function InitSound() { } var isAssessment = false;</script>
+	<script src="utility.js"></script>
+	<script src="screenUtils.js"></script>
+	<script src="interactiveUtils.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			padding: 20px;
+		}
+
+		.section {
+			background-color: #fff;
+			border-radius: 10px;
+			padding: 15px;
+			margin-bottom: 15px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.section h3 {
+			color: #003366;
+			cursor: pointer;
+			margin: 0;
+			padding: 10px;
+			background-color: #e6e6e6;
+			border-radius: 8px;
+		}
+
+		.section-content {
+			display: none;
+			padding: 10px 15px;
+			background-color: #f9f9f9;
+			border-radius: 8px;
+			margin-top: 5px;
+		}
+
+		ul {
+			margin-left: 20px;
+		}
+
+		.note {
+			background-color: #e6f7ff;
+			padding: 10px;
+			border-left: 5px solid #3399ff;
+			margin-top: 10px;
+		}
+	</style>
+	<script>
+		function toggleSection(id) {
+			var content = document.getElementById(id);
+			content.style.display = content.style.display === 'block' ? 'none' : 'block';
+		}
+	</script>
+</head>
+
+<body class="contentBody" onload="Initialize();">
+	<div id="Water_Mark"></div>
+	<div id="UDUTU_Text1" class="text left top textHalfWidth fullHeight">
+		<div class="textHeadline" id="UDUTU_Text1_Headline">Key principles of first aid</div>
+		<div class="textContent" id="UDUTU_Text1_Content">
+			<p>These principles will help you build your first aid knowledge and skills. Study them carefully, as they
+				are the foundation of everything that you will learn in the topics to follow.&nbsp;</p>
+			<div class="section">
+				<h3 onclick="toggleSection('sec9')">Stay Calm</h3>
+				<div id="sec9" class="section-content">
+					<p>Do NOT take risks that could cause injury to yourself, the injured person, or any bystanders.</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h3 onclick="toggleSection('sec10')">Assess the situation</h3>
+				<div id="sec10" class="section-content">
+					<p>
+						Make sure that it is safe for you and those around you. A good first aider is someone who is
+						aware of their surroundings and ready to act quickly if required.
+					</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h3 onclick="toggleSection('sec11')">Manage the person</h3>
+				<div id="sec11" class="section-content">
+					<p>
+						In addition to providing first aid, managing the person can include keeping them warm or
+						comforting and reassuring them.
+					</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<h3 onclick="toggleSection('sec12')">Do things step by step</h3>
+				<div id="sec12" class="section-content">
+					<p>
+						Applying what you know in a step-wise manner will help you stay calm and provide effective
+						first aid in an emergency.
+					</p>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+			<p><strong>
+					<font color="#b01c05">Select Next to continue.</font>
+				</strong></p>
+		</div>
+		<div id="UDUTU_Text1_EditContent" class="editPanel">
+			<p>text editing options</p>
+			<div id="UDUTU_Text1_btnAdd"></div>
+			<div id="UDUTU_Text1_btnEdit"></div>
+			<div id="UDUTU_Text1_btnSelect"></div>
+		</div>
+	</div>
+
+	<div id="UDUTU_MultiMedia1" class="image right top imageHalfWidth imageRegHeight">
+		<!-- <img id="UDUTU_MultiMedia1_Content" class="SomeClass" title="Person holding a magnifying glass" width='448'
+			height='336' src='../media/content/Screenshot 2025-12-24 115454.png' srcWidth='448' srcHeight='336'
+			ALT='Person holding a magnifying glass'> -->
+
+		<div id="UDUTU_MultiMedia1_EditContent" class="editPanel">
+			<p>media editing options</p>
+			<div id="UDUTU_MultiMedia1_btnAdd"></div>
+			<div id="UDUTU_MultiMedia1_btnEdit"></div>
+			<div id="UDUTU_MultiMedia1_btnSelect"></div>
+		</div>
+
+		<div id="UDUTU_MultiMedia1_Caption" class="caption">
+			<div id="UDUTU_MultiMedia1_Caption_Content" class="capText"></div>
+			<div id="UDUTU_MultiMedia1_Caption_EditContent" class="editPanel">
+				<p>edit caption</p>
+				<div id="UDUTU_MultiMedia1_Caption_btnEdit"></div>
+			</div>
+		</div>
+	</div>
+	<span ID="UDUTU_Narration" NAME="UDUTU_Narration" style="visibility: hidden;">../Media/Content/sample.mp3</span>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Choking Emergency – True or False</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 700px;
+      margin: auto;
+      /* background: #ffffff; */
+      padding: 25px 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1); */
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      After the fifth back blow, your friend is still struggling to breathe.
+      You quickly move to providing abdominal thrusts.<br><br>
+      True or false: Is this the correct course of action?
+    </h2>
+
+    <form>
+
+      <div class="option">
+        <input type="radio" name="tfAnswer" id="trueOpt" value="true">
+        <label for="trueOpt">True</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="tfAnswer" id="falseOpt" value="false">
+        <label for="falseOpt">False</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! If back blows fail, abdominal thrusts are the appropriate next step.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. After unsuccessful back blows, abdominal thrusts should be performed.
+    </div>
+
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="tfAnswer"]:checked');
+
+      if (!selected) {
+        alert("Please select True or False.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("choking_abdominal_thrusts_tf", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      if (answer === "true") {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

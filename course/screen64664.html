@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Aid – Signs of Shock</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 750px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      From the options below, select which symptoms could be a sign of shock in an adult. (Select all that apply)
+    </h2>
+
+    <form id="quizForm">
+
+      <div class="option">
+        <input type="checkbox" name="shockSymptom" id="opt1" value="The person begins to shout and scream">
+        <label for="opt1">The person begins to shout and scream</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" name="shockSymptom" id="opt2" value="The person is pale and has cold skin">
+        <label for="opt2">The person is pale and has cold skin</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" name="shockSymptom" id="opt3" value="The person is confused">
+        <label for="opt3">The person is confused</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" name="shockSymptom" id="opt4" value="The person begins to talk very fast">
+        <label for="opt4">The person begins to talk very fast</label>
+      </div>
+
+      <div class="option">
+        <input type="checkbox" name="shockSymptom" id="opt5" value="The person is having difficulty breathing">
+        <label for="opt5">The person is having difficulty breathing</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! The signs of shock in an adult include: pale and cold skin, confusion, and difficulty breathing.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct symptoms are: pale and cold skin, confusion, and difficulty breathing.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = Array.from(document.querySelectorAll('input[name="shockSymptom"]:checked'))
+        .map(input => input.value);
+
+      if (selected.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
+
+      // Save selected options in localStorage as JSON
+      localStorage.setItem("shock_symptom_adult", JSON.stringify(selected));
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answers
+      const correctAnswers = [
+        "The person is pale and has cold skin",
+        "The person is confused",
+        "The person is having difficulty breathing"
+      ];
+
+      // Compare arrays (order doesn't matter)
+      const isCorrect = selected.length === correctAnswers.length &&
+        selected.every(val => correctAnswers.includes(val));
+
+      if (isCorrect) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

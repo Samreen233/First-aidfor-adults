@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Choking First Aid - Video & Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      align-items: flex-start;
+    }
+
+    .left {
+      flex: 1 1 0;
+      min-width: 300px;
+    }
+
+    .right {
+      flex: 0 0 auto;
+      max-width: 500px;
+      /* video max width */
+    }
+
+    .left p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin-bottom: 12px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    /* Optional: scale video on smaller screens */
+    @media screen and (max-width: 900px) {
+      .container {
+        gap: 15px;
+      }
+
+      .right {
+        max-width: 350px;
+      }
+
+      iframe {
+        height: 220px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .right {
+        max-width: 300px;
+      }
+
+      iframe {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Left side: paragraph + checkboxes -->
+    <div class="left">
+      <h2>Overview of First Aid for Choking</h2>
+      <p>
+        Choking can occur when a person's airway becomes blocked, preventing them from getting enough oxygen into their
+        lungs.
+        The most common causes of choking are foods such as nuts, popcorn, and grapes. Household items or other small
+        objects can also cause choking.
+      </p>
+      <p><strong>Which of the following actions can help someone who is choking? (Select all that apply)</strong></p>
+
+      <form id="chokingForm">
+        <div class="option">
+          <input type="checkbox" id="opt1" value="Back blows">
+          <label for="opt1">Coughing, both forcefully and weakly</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="opt2" value="Abdominal thrusts">
+          <label for="opt2">Making high-pitched noises when inhaling; noisy breathing; or displaying an inability to
+            cough, speak, cry, or breathe</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="opt3" value="Hit chest">
+          <label for="opt3">Showing signs of panic, including clutching the throat with one or both hands</label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="opt4" value="Call emergency">
+          <label for="opt4">Having a bluish skin color and/ or becoming unresponsive </label>
+        </div>
+
+        <button type="button" onclick="checkAnswer()">Submit</button>
+
+
+      </form>
+    </div>
+
+    <!-- Right side: YouTube video -->
+    <div class="right">
+      <iframe src="https://www.youtube.com/embed/Dfod4noPe8E" title="Choking Animation" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const correctOptions = ["opt1", "opt2", "opt4"];
+      const selected = Array.from(document.querySelectorAll("#chokingForm input[type=checkbox]"))
+        .filter(input => input.checked)
+        .map(input => input.id);
+
+      const isCorrect = selected.length === correctOptions.length &&
+        selected.every(opt => correctOptions.includes(opt));
+
+      if (isCorrect) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+
+      localStorage.setItem("choking_quiz", JSON.stringify(selected));
+      localStorage.setItem("quizCompletedAt", Date.now());
+    }
+  </script>
+
+</body>
+
+</html>

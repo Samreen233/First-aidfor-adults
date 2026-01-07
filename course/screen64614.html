@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Emergency Response Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Emergency Response Quiz Results</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="resultsBody"></tbody>
+  </table>
+
+  <h2 id="score"></h2>
+
+  <script>
+    /***********************
+     * EXPIRY CONFIG
+     ***********************/
+    const EXPIRY_TIME = 30 * 60 * 1000; // 30 minutes
+    const completedAt = localStorage.getItem("quizCompletedAt");
+
+    if (completedAt) {
+      const now = Date.now();
+      if (now - completedAt > EXPIRY_TIME) {
+        clearQuizData();
+      }
+    }
+
+    /***********************
+     * QUIZ DATA
+     * Key = localStorage key saved in each question
+     ***********************/
+    const quizData = [
+      {
+        question: "Imagine you find an unresponsive man. What do you do first?",
+        key: "emergencyScenario_Q1",
+        correct: ["Check breathing"]
+      },
+      {
+        question: "If the casualty is not breathing and help is on the way, what is the next step?",
+        key: "emergencyScenario_Q2",
+        correct: ["Begin chest compressions"]
+      },
+      {
+        question: "When giving chest compressions, how far should you push down?",
+        key: "cprDepth_Q3",
+        correct: ["5-6cm"]
+      },
+      {
+        question: "How do you know you have given an effective rescue breath?",
+        key: "q_rescue",
+        correct: ["chest_rises"]
+      },
+      {
+        question: "After EMS arrives, what could you have done differently next time?",
+        key: "answer",
+        correct: ["defibrillator"]
+      }
+    ];
+
+    /***********************
+     * RENDER RESULTS
+     ***********************/
+    let score = 0;
+    let answeredQuestions = 0;
+    const tbody = document.getElementById("resultsBody");
+
+    quizData.forEach(q => {
+      let userAnswer = localStorage.getItem(q.key);
+      let displayAnswer = "No Answer";
+
+      if (userAnswer) {
+        // For Q4 rescue breath, map value to readable text
+        if (q.key === "q_rescue" && userAnswer === "chest_rises") displayAnswer = "Chest rises";
+        else if (q.key === "answer" && userAnswer === "defibrillator") displayAnswer = "Asked a bystander for defibrillator";
+        else displayAnswer = userAnswer;
+        answeredQuestions++;
+      }
+
+      const isCorrect = userAnswer && q.correct.includes(userAnswer);
+      if (isCorrect) score++;
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${q.question}</td>
+        <td>${displayAnswer}</td>
+        <td class="${userAnswer ? (isCorrect ? "correct" : "incorrect") : ""}">
+          ${userAnswer ? (isCorrect ? "Correct" : "Incorrect") : "—"}
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("score").innerText =
+      answeredQuestions > 0
+        ? `Total Score: ${score} / ${quizData.length}`
+        : "No quiz attempt found.";
+
+    /***********************
+     * CLEAR FUNCTION
+     ***********************/
+    function clearQuizData() {
+      quizData.forEach(q => localStorage.removeItem(q.key));
+      localStorage.removeItem("quizCompletedAt");
+    }
+
+    /***********************
+     * AUTO CLEAR AFTER VIEW
+     ***********************/
+    setTimeout(() => {
+      clearQuizData();
+    }, 10000); // 10 seconds
+  </script>
+
+</body>
+
+</html>

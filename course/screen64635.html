@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>First Aid Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    #score {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .expired-message {
+      text-align: center;
+      font-size: 16px;
+      color: red;
+      margin-top: 50px;
+    }
+
+    .no-attempt {
+      text-align: center;
+      font-size: 16px;
+      color: orange;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>First Aid Quiz Results</h1>
+
+  <table id="resultsTable">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="resultsBody"></tbody>
+  </table>
+
+  <h2 id="score"></h2>
+
+  <div class="expired-message" id="expiredMessage" style="display:none;">
+    ⏳ Your quiz results have expired. Please retake the quiz.
+  </div>
+
+  <div class="no-attempt" id="noAttemptMessage" style="display:none;">
+    ⚠️ No quiz attempt found.
+  </div>
+
+  <script>
+    /***********************
+     * EXPIRY CONFIG
+     ***********************/
+    const EXPIRY_TIME = 60 * 60 * 1000; // 60 minutes
+    const completedAt = localStorage.getItem("quizCompletedAt");
+
+    if (!completedAt) {
+      // No quiz attempt yet
+      document.getElementById("resultsTable").style.display = "none";
+      document.getElementById("score").style.display = "none";
+      document.getElementById("noAttemptMessage").style.display = "block";
+    } else if (Date.now() - completedAt > EXPIRY_TIME) {
+      // Quiz expired
+      clearQuizData();
+      document.getElementById("resultsTable").style.display = "none";
+      document.getElementById("score").style.display = "none";
+      document.getElementById("expiredMessage").style.display = "block";
+    } else {
+
+      /***********************
+       * QUIZ DATA
+       ***********************/
+      const quizData = [
+        {
+          question: "Q1: You're watching a friend cough after eating nuts. What do you do?",
+          key: "choking_first_aid_answer",
+          correct: ["2"],
+          display: {
+            "1": "Immediately call emergency services",
+            "2": "Watch closely, do nothing else",
+            "3": "Lay on front & provide back blows",
+            "4": "Lay on back & begin chest compressions",
+            "5": "Flip upside down"
+          }
+        },
+        {
+          question: "Q2: Friend is choking and panicking. What is the next action?",
+          key: "choking_emergency_action",
+          correct: ["2"],
+          display: {
+            "1": "Five consecutive back blows without checking",
+            "2": "Lean forward & give five back blows, checking each time",
+            "3": "Give water to wash object down",
+            "4": "Lay on front & provide back blows",
+            "5": "Look for a defibrillator"
+          }
+        },
+        {
+          question: "Q3: After the fifth back blow, you move to abdominal thrusts. True or false?",
+          key: "choking_abdominal_thrusts_tf",
+          correct: ["true"],
+          display: { "true": "True", "false": "False" }
+        },
+        {
+          question: "Q4: Friend is unresponsive & not breathing. Instruct someone to call help and start CPR. True or false?",
+          key: "unresponsive_friend_cpr_tf",
+          correct: ["true"],
+          display: { "true": "True", "false": "False" }
+        },
+        {
+          question: "Q5: The best chance of recovery from cardiac arrest relies on?",
+          key: "cardiac_arrest_mc",
+          correct: ["All of the above"]
+        }
+      ];
+
+      /***********************
+       * RENDER RESULTS
+       ***********************/
+      let score = 0;
+      const tbody = document.getElementById("resultsBody");
+
+      quizData.forEach(q => {
+        let userAnswer = localStorage.getItem(q.key);
+        let displayAnswer = "No Answer";
+
+        if (userAnswer) {
+          if (q.display && q.display[userAnswer]) {
+            displayAnswer = q.display[userAnswer];
+          } else {
+            displayAnswer = userAnswer;
+          }
+        }
+
+        const isCorrect = userAnswer && q.correct.includes(userAnswer);
+        if (isCorrect) score++;
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${q.question}</td>
+          <td>${displayAnswer}</td>
+          <td class="${userAnswer ? (isCorrect ? "correct" : "incorrect") : ""}">
+            ${userAnswer ? (isCorrect ? "Correct" : "Incorrect") : "—"}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById("score").innerText =
+        `Total Score: ${score} / ${quizData.length}`;
+    }
+
+    /***********************
+     * CLEAR FUNCTION
+     ***********************/
+    function clearQuizData() {
+      const keys = [
+        "choking_first_aid_answer",
+        "choking_emergency_action",
+        "choking_abdominal_thrusts_tf",
+        "unresponsive_friend_cpr_tf",
+        "cardiac_arrest_mc",
+        "quizCompletedAt"
+      ];
+      keys.forEach(k => localStorage.removeItem(k));
+    }
+  </script>
+
+</body>
+</html>

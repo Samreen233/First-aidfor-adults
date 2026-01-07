@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Aid – Bleeding Without Object</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 30px;
+    }
+
+    .quiz-container {
+      max-width: 750px;
+      margin: auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .option {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .option input {
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+    <h2>
+      You have successfully stopped the bleeding. What would you have done differently
+      if there was no object in the wound?
+    </h2>
+
+    <form id="quizForm">
+
+      <div class="option">
+        <input type="radio" name="bleedingOption" id="opt1" value="Leave the wound open to the air">
+        <label for="opt1">Leave the wound open to the air to help it heal</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="bleedingOption" id="opt2" value="Apply a tourniquet">
+        <label for="opt2">Apply a tourniquet to the area</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="bleedingOption" id="opt3" value="Wash the wound">
+        <label for="opt3">Wash the wound with alcohol or other liquid that you have available</label>
+      </div>
+
+      <div class="option">
+        <input type="radio" name="bleedingOption" id="opt4" value="Apply direct pressure">
+        <label for="opt4">Apply direct pressure to the area to stop the bleeding</label>
+      </div>
+
+      <button type="button" onclick="submitAnswer()">Submit</button>
+    </form>
+
+    <div id="correctFeedback" class="feedback correct">
+      ✅ Correct! The proper action is to apply a tourniquet if needed or wash the wound.
+    </div>
+
+    <div id="incorrectFeedback" class="feedback incorrect">
+      ❌ Incorrect. The correct answer is to apply a tourniquet or wash the wound.
+    </div>
+  </div>
+
+  <script>
+    function submitAnswer() {
+      const selected = document.querySelector('input[name="bleedingOption"]:checked');
+
+      if (!selected) {
+        alert("Please select an option.");
+        return;
+      }
+
+      const answer = selected.value;
+
+      // Save to localStorage
+      localStorage.setItem("bleeding_no_object_action", answer);
+      localStorage.setItem("quizCompletedAt", Date.now());
+
+      // Correct answers = option 2 or 3
+      const correctAnswers = ["Apply a tourniquet", "Wash the wound"];
+      const isCorrect = correctAnswers.includes(answer);
+
+      if (isCorrect) {
+        document.getElementById("correctFeedback").style.display = "block";
+        document.getElementById("incorrectFeedback").style.display = "none";
+      } else {
+        document.getElementById("correctFeedback").style.display = "none";
+        document.getElementById("incorrectFeedback").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

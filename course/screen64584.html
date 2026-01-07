@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Q3: Handwashing</title>
+	<script>
+		function checkAnswer() {
+			const selected = document.querySelector('input[name="quizOption"]:checked');
+			if (!selected) {
+				alert("Please select an answer.");
+				return;
+			}
+
+			// Save user answer in localStorage
+			localStorage.setItem("q3", selected.value);
+
+			const correctAnswer = "false"; // Correct answer is False
+
+			if (selected.value === correctAnswer) {
+				alert("✅ Correct! Wash hands BOTH before and after providing first aid.");
+				UDUTU_API.goScreen(84444); // Replace with your next screen ID
+			} else {
+				alert("❌ Incorrect. Wash hands BOTH before and after providing first aid.");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<p>It is important to wash your hands only after providing first aid. True or False?</p>
+
+	<form>
+		<input type="radio" name="quizOption" value="true" id="trueOpt">
+		<label for="trueOpt">True</label><br><br>
+
+		<input type="radio" name="quizOption" value="false" id="falseOpt">
+		<label for="falseOpt">False</label><br><br>
+
+		<button type="button" onclick="checkAnswer()">Submit Answer</button>
+	</form>
+</body>
+
+</html>
