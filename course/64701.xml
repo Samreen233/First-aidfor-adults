@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 5 of 39" closeText="OK">
-    <question>Which approach does NIDA-Pakistan use to implement its programs?</question>
+    <question>Which approach is recommended when providing psychological first aid to an adult in distress?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Community-driven and participatory approach.</option>
-    <option correct="0" display_order="1" alt="">Top-down management without community input.</option>
-    <option correct="0" display_order="2" alt="">Exclusive reliance on international consultants.</option>
-    <option correct="0" display_order="3" alt="">Random selection of interventions.</option>
+    <option correct="1" display_order="0" alt="">A calm, supportive, and empathetic approach that addresses immediate needs.</option>
+    <option correct="0" display_order="1" alt="">A strict, directive approach that forces them to calm down.</option>
+    <option correct="0" display_order="2" alt="">An approach that ignores their emotional needs and focuses only on physical safety.</option>
+    <option correct="0" display_order="3" alt="">Randomly offering advice without assessing the situation.</option>
   </answers>
-  <correct audio="">Correct! NIDA-Pakistan emphasizes a community-driven and participatory approach.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Community-driven and participatory approach.</incorrect>
+  <correct audio="">Correct! PFA should always be calm, supportive, and address immediate needs.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: A calm, supportive, and empathetic approach that addresses immediate needs.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

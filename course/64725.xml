@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 31 of 39" closeText="OK">
-    <question>Which of the following is a basic principle of procurement at NIDA-Pakistan?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 23 of 34" closeText="OK">
+    <question>Which of the following is considered a safe approach when providing psychological first aid?</question>
   <answers>
-    <option correct="0" display_order="1" alt="">Avoiding competition and favoring known suppliers.</option>
-    <option correct="0" display_order="2" alt="">Making purchases without documentation to save time.</option>
-    <option correct="0" display_order="3" alt="">Ignoring donor rules when convenient.</option>
-    <option correct="1" display_order="0" alt="">Best value for money, competitive bidding, transparency, integrity.</option>
+    <option correct="1" display_order="0" alt="">Maintain a calm presence and personal safety while supporting the adult.</option>
+    <option correct="0" display_order="1" alt="">Rush the person to act immediately without explanation.</option>
+    <option correct="0" display_order="2" alt="">Ignore the situation if others are present.</option>
+    <option correct="0" display_order="3" alt="">Reprimand the person for panicking.</option>
   </answers>
-  <correct audio="">Correct! Procurement must follow principles including best value, transparency, and integrity.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Best value for money, competitive bidding, transparency, integrity.</incorrect>
+  <correct audio="">Correct! Safety for both responder and adult is a priority in PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Maintain a calm presence and personal safety while supporting the adult.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

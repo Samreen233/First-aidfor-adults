@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 21 of 39" closeText="OK">
-    <question>What is the main objective of NIDA-Pakistan’s internal control system?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 4 of 20" closeText="OK">
+    <question>What are the three basic steps of psychological first aid?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">To safeguard assets, ensure reliable accounts, and achieve operational efficiency.</option>
-    <option correct="0" display_order="1" alt="">To replace external audits completely.</option>
-    <option correct="0" display_order="2" alt="">To process payments faster without documentation.</option>
-    <option correct="0" display_order="3" alt="">To allow project managers full discretion over funds.</option>
+    <option correct="1" display_order="0" alt="">Look, Listen, Link</option>
+    <option correct="0" display_order="1" alt="">Ignore, Wait, Distract</option>
+    <option correct="0" display_order="2" alt="">Force, Calm, Reassure</option>
+    <option correct="0" display_order="3" alt="">Panic, Evacuate, Report</option>
   </answers>
-  <correct audio="">Correct! Internal control ensures asset protection, reliability, and efficiency.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: To safeguard assets, ensure reliable accounts, and achieve operational efficiency.</incorrect>
+  <correct audio="">Correct! The three steps of PFA are Look, Listen, and Link.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Look, Listen, Link.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

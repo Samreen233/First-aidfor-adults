@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 33 of 39" closeText="OK">
-    <question>Which documents are typically required for an RFQ (Request for Quotation)?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 16 of 20" closeText="OK">
+    <question>What is the primary goal of linking in psychological first aid?</question>
   <answers>
-    <option correct="0" display_order="1" alt="">Only vendor invoice without specifications.</option>
-    <option correct="0" display_order="2" alt="">Internal memo from project manager without supplier input.</option>
-    <option correct="1" display_order="0" alt="">Quotation request, transport, packing, marking, currency, payment terms, offer validity.</option>
-    <option correct="0" display_order="3" alt="">Verbal quotation from a single supplier.</option>
+    <option correct="1" display_order="0" alt="">Connect the person to family, friends, or professional support.</option>
+    <option correct="0" display_order="1" alt="">Ignore the person once calm.</option>
+    <option correct="0" display_order="2" alt="">Force them to accept help immediately.</option>
+    <option correct="0" display_order="3" alt="">Provide incorrect information to reduce panic.</option>
   </answers>
-  <correct audio="">Correct! RFQ includes transport, packing, marking, currency, payment terms, and validity.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Quotation request, transport, packing, marking, currency, payment terms, offer validity.</incorrect>
+  <correct audio="">Correct! Linking helps the person access further support and resources.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Connect the person to family, friends, or professional support.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

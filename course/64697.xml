@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 1 of 39" closeText="OK">
-    <question>What is the primary mission of NIDA-Pakistan?</question>
+    <question>Which of the following is NOT a category of distress in adults?</question>
   <answers>
-    <option correct="0" display_order="0" alt="">To run commercial businesses for profit.</option>
-    <option correct="1" display_order="1" alt="">To empower communities through development and humanitarian initiatives.</option>
-    <option correct="0" display_order="2" alt="">To provide only government consultancy services.</option>
-    <option correct="0" display_order="3" alt="">To focus solely on education in urban areas.</option>
+    <option correct="0" display_order="0" alt="">Physical reactions (trembling, shaking)</option>
+    <option correct="0" display_order="1" alt="">Emotional reactions (crying, anxiety)</option>
+    <option correct="1" display_order="2" alt="">Chemical reactions</option>
+    <option correct="0" display_order="3" alt="">Cognitive reactions (confusion, indecision)</option>
+    <option correct="0" display_order="4" alt="">Behavioral reactions (fleeing, avoidance)</option>
   </answers>
-  <correct audio="">Correct! NIDA-Pakistan focuses on community empowerment through development and humanitarian initiatives.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: To empower communities through development and humanitarian initiatives.</incorrect>
+  <correct audio="">Correct! Chemical reactions are not recognized as a category of distress.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Chemical reactions.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

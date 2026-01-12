@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 26 of 39" closeText="OK">
-    <question>Which document confirms that goods have been received by NIDA-Pakistan?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 9 of 20" closeText="OK">
+    <question>Which of the following are steps in providing psychological first aid? (Select all that apply)</question>
   <answers>
-    <option correct="0" display_order="0" alt="">Cross cheque photocopy.</option>
-    <option correct="1" display_order="1" alt="">Goods Received Note (GRN).</option>
-    <option correct="0" display_order="2" alt="">Purchase Order.</option>
-    <option correct="0" display_order="3" alt="">Vendor quotation.</option>
+    <option correct="1" display_order="0" alt="">Look: Assess who needs help and prioritize.</option>
+    <option correct="1" display_order="1" alt="">Listen: Actively hear the person and show support.</option>
+    <option correct="1" display_order="2" alt="">Link: Connect them to family, friends, or professional help.</option>
+    <option correct="0" display_order="3" alt="">Ignore: Wait until the person calms down by themselves.</option>
   </answers>
-  <correct audio="">Correct! The GRN confirms receipt of goods.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Goods Received Note (GRN).</incorrect>
+  <correct audio="">Correct! Look, Listen, and Link are the key steps of PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answers are: Look, Listen, Link.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

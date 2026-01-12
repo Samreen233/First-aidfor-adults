@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 8 of 39" closeText="OK">
-    <question>What should you do if a personal interest conflicts with NIDA-Pakistan’s mission?</question>
+    <question>What should you do if you are unsure about how to support an adult in distress during psychological first aid?</question>
   <answers>
-    <option correct="0" display_order="0" alt="">Ignore it and continue with your decision.</option>
-    <option correct="1" display_order="1" alt="">Disclose it immediately to your supervisor or designated compliance authority.</option>
-    <option correct="0" display_order="2" alt="">Delegate the decision to a colleague without disclosure.</option>
-    <option correct="0" display_order="3" alt="">Handle it secretly to avoid delays.</option>
+    <option correct="0" display_order="0" alt="">Ignore the situation and wait for someone else to intervene.</option>
+    <option correct="1" display_order="1" alt="">Ask for guidance from trained personnel or follow established PFA protocols.</option>
+    <option correct="0" display_order="2" alt="">Act randomly without assessing the person’s needs.</option>
+    <option correct="0" display_order="3" alt="">Provide incorrect information to calm them quickly.</option>
   </answers>
-  <correct audio="">Correct! All conflicts of interest must be disclosed immediately to maintain trust and transparency.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Disclose it immediately to your supervisor or designated compliance authority.</incorrect>
+  <correct audio="">Correct! Always seek guidance or follow established PFA protocols when unsure.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Ask for guidance from trained personnel or follow established PFA protocols.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

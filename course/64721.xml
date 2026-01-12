@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 27 of 39" closeText="OK">
-    <question>What is a key requirement for Cash-for-Work beneficiary payment?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 10 of 20" closeText="OK">
+    <question>True or False: Psychological first aid can replace professional therapy entirely.</question>
   <answers>
-    <option correct="0" display_order="0" alt="">Only verbal confirmation of work done.</option>
-    <option correct="1" display_order="1" alt="">Verified beneficiary list, tokens, thumb impressions/signatures, and cheque copies.</option>
-    <option correct="0" display_order="2" alt="">No documentation is needed if supervisor approves.</option>
-    <option correct="0" display_order="3" alt="">Payment without reconciliation sheets.</option>
+    <option correct="0" display_order="0" alt="">True</option>
+    <option correct="1" display_order="1" alt="">False</option>
   </answers>
-  <correct audio="">Correct! CfW payments require full documentation for accountability.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Verified beneficiary list, tokens, thumb impressions/signatures, and cheque copies.</incorrect>
+  <correct audio="">Correct! PFA provides immediate support but does not replace therapy.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: False.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

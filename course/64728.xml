@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 34 of 39" closeText="OK">
-    <question>Which of the following is NOT a selection criterion in Comparative Bid Analysis (CBA)?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 17 of 20" closeText="OK">
+    <question>True or False: Psychological first aid requires providing false reassurance to calm the person quickly.</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Supplier’s political affiliation.</option>
-    <option correct="0" display_order="1" alt="">Price, quality, timeliness, reliability, payment terms, after sales service.</option>
-    <option correct="0" display_order="2" alt="">Running costs, maintenance, and local considerations.</option>
-    <option correct="0" display_order="3" alt="">Timeliness of delivery and supplier reliability.</option>
+    <option correct="0" display_order="0" alt="">True</option>
+    <option correct="1" display_order="1" alt="">False</option>
   </answers>
-  <correct audio="">Correct! Political affiliation is irrelevant; selection is based on merit and compliance criteria.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Supplier’s political affiliation.</incorrect>
+  <correct audio="">Correct! False reassurance should never be given in PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: False.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

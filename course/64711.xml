@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 15 of 39" closeText="OK">
-    <question>How does NIDA-Pakistan ensure equal employment opportunity for candidates?</question>
+    <question>How can you ensure fairness and respect when providing psychological first aid to adults?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">By hiring based on merit and competencies while prohibiting discrimination on any basis.</option>
-    <option correct="0" display_order="1" alt="">By selecting candidates based on personal connections.</option>
-    <option correct="0" display_order="2" alt="">By prioritizing male candidates for all positions.</option>
-    <option correct="0" display_order="3" alt="">By using subjective interview scoring without validation.</option>
+    <option correct="1" display_order="0" alt="">By responding with empathy, avoiding judgment, and respecting the person’s dignity and needs.</option>
+    <option correct="0" display_order="1" alt="">By giving orders or forcing them to follow instructions quickly.</option>
+    <option correct="0" display_order="2" alt="">By ignoring their emotional state and focusing only on tasks.</option>
+    <option correct="0" display_order="3" alt="">By providing misleading information to calm them down immediately.</option>
   </answers>
-  <correct audio="">Correct! NIDA-Pakistan follows non-discrimination and merit-based hiring.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: By hiring based on merit and competencies while prohibiting discrimination on any basis.</incorrect>
+  <correct audio="">Correct! Empathy, non-judgment, and respecting dignity ensure fairness in PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: By responding with empathy, avoiding judgment, and respecting the person’s dignity and needs.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

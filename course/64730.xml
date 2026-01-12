@@ -1,15 +1,12 @@
 <?xml version="1.0"?>
-
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 36 of 39" closeText="OK">
-    <question>What defines a low-value purchase according to NIDA-Pakistan policy?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 19 of 20" closeText="OK">
+    <question>True or False: Listening actively is a key part of psychological first aid.</question>
   <answers>
-    <option correct="0" display_order="1" alt="">PKR 25,001 – 200,000.</option>
-    <option correct="0" display_order="2" alt="">PKR 200,001 – 1,500,000.</option>
-    <option correct="1" display_order="0" alt="">PKR 0 – 25,000.</option>
-    <option correct="0" display_order="3" alt="">Above PKR 1,500,001.</option>
+    <option correct="1" display_order="0" alt="">True</option>
+    <option correct="0" display_order="1" alt="">False</option>
   </answers>
-  <correct audio="">Correct! Low-value purchases are PKR 0 – 25,000.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: PKR 0 – 25,000.</incorrect>
+  <correct audio="">Correct! Active listening is crucial to providing support and understanding needs.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: True.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardiac Arrest – Distress Categories Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+    }
+
+    .quiz-container {
+      /* background: #fff; */
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+    }
+
+    .option {
+      margin: 10px 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h2>Question</h2>
+  <p>
+    You've arrived at a scene where someone has had a cardiac arrest.  
+    From the list below, which answer is <strong>NOT</strong> one of the four broad categories of distress?
+  </p>
+
+  <form id="quizForm">
+    <div class="option">
+      <input type="radio" name="answer" value="Physical reactions to distress">
+      Physical reactions to distress
+    </div>
+
+    <div class="option">
+      <input type="radio" name="answer" value="Emotional reactions">
+      Emotional reactions
+    </div>
+
+    <div class="option">
+      <input type="radio" name="answer" value="Chemical reactions">
+      Chemical reactions
+    </div>
+
+    <div class="option">
+      <input type="radio" name="answer" value="Cognitive reactions">
+      Cognitive reactions
+    </div>
+
+    <div class="option">
+      <input type="radio" name="answer" value="Behavioral reactions">
+      Behavioral reactions
+    </div>
+
+    <button type="button" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+  </form>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function checkAnswer() {
+    const selected = document.querySelector('input[name="answer"]:checked');
+    const resultDiv = document.getElementById("result");
+    const submitBtn = document.getElementById("submitBtn");
+    const options = document.querySelectorAll('input[name="answer"]');
+
+    if (!selected) {
+      alert("Please select an answer.");
+      return;
+    }
+
+    const userAnswer = selected.value;
+    const correctAnswer = "Chemical reactions";
+
+    // Save answer
+    localStorage.setItem("distressQuizAnswer", userAnswer);
+
+    // Disable all options
+    options.forEach(option => option.disabled = true);
+
+    // Disable submit button
+    submitBtn.disabled = true;
+
+    if (userAnswer === correctAnswer) {
+      resultDiv.innerHTML = "✔ Correct!<br>Chemical reactions are not a category of distress.";
+      resultDiv.className = "result correct";
+    } else {
+      resultDiv.innerHTML =
+        "✖ Incorrect.<br><strong>Correct answer:</strong> Chemical reactions.";
+      resultDiv.className = "result incorrect";
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Module 7: Safeguarding – Question 1" closeText="OK">
-    <question>Which of the following actions is strictly prohibited under NIDA-Pakistan’s Safeguarding policy?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 25 of 34" closeText="OK">
+    <question>Which of the following is an example of a practical way to help an adult in distress?</question>
   <answers>
-    <option correct="0" display_order="1" alt="">Reporting observed violations through proper channels.</option>
-    <option correct="0" display_order="2" alt="">Engaging in child protection awareness and training programs.</option>
-    <option correct="0" display_order="3" alt="">Maintaining confidentiality of sensitive beneficiary information.</option>
-    <option correct="1" display_order="0" alt="">Any form of sexual exploitation, abuse, or harassment of beneficiaries, colleagues, or partners.</option>
+    <option correct="1" display_order="0" alt="">Help them contact supportive family, friends, or professional services.</option>
+    <option correct="0" display_order="1" alt="">Force them to speak about feelings before they are ready.</option>
+    <option correct="0" display_order="2" alt="">Give them incorrect information to stop panic.</option>
+    <option correct="0" display_order="3" alt="">Leave them alone and avoid the situation.</option>
   </answers>
-  <correct audio="">Correct! Safeguarding prohibits sexual exploitation, abuse, and harassment in all circumstances.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Any form of sexual exploitation, abuse, or harassment of beneficiaries, colleagues, or partners.</incorrect>
+  <correct audio="">Correct! Linking to support is a practical and safe PFA action.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Help them contact supportive family, friends, or professional services.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

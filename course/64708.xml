@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 12 of 39" closeText="OK">
-    <question>Who are considered Regular/Permanent Employees at NIDA-Pakistan?</question>
+    <question>Who should be considered a priority when providing psychological first aid in an emergency?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Members of the Senior Management Team appointed under open-ended agreements.</option>
-    <option correct="0" display_order="1" alt="">Short-term consultants working on specific projects.</option>
-    <option correct="0" display_order="2" alt="">Temporary employees hired for casual tasks.</option>
-    <option correct="0" display_order="3" alt="">Interns on probation for less than three months.</option>
+    <option correct="1" display_order="0" alt="">Adults showing severe distress, panic, or physical signs of a medical emergency.</option>
+    <option correct="0" display_order="1" alt="">Adults who appear calm and unresponsive.</option>
+    <option correct="0" display_order="2" alt="">Bystanders not affected by the situation.</option>
+    <option correct="0" display_order="3" alt="">Individuals already receiving professional help elsewhere.</option>
   </answers>
-  <correct audio="">Correct! Permanent employees include SMT members appointed indefinitely.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Members of the Senior Management Team appointed under open-ended agreements.</incorrect>
+  <correct audio="">Correct! Adults showing severe distress or emergency signs should be prioritized in PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Adults showing severe distress, panic, or physical signs of a medical emergency.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

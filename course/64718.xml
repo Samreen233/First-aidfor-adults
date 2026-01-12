@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 24 of 39" closeText="OK">
-    <question>Which of the following documents is required for vehicle rental payment?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 7 of 20" closeText="OK">
+    <question>Which of the following should NEVER be done in psychological first aid?</question>
   <answers>
-    <option correct="0" display_order="0" alt="">Only verbal confirmation from the driver.</option>
-    <option correct="0" display_order="1" alt="">Fuel receipt without any contract.</option>
-    <option correct="1" display_order="2" alt="">Signed rental agreement, quotations, logbooks, vendor invoice, and acknowledgement.</option>
-    <option correct="0" display_order="3" alt="">No documents required for rentals below PKR 10,000.</option>
+    <option correct="1" display_order="0" alt="">Forcing the person to calm down or giving false reassurance.</option>
+    <option correct="0" display_order="1" alt="">Listening actively and showing empathy.</option>
+    <option correct="0" display_order="2" alt="">Supporting their basic needs and safety.</option>
+    <option correct="0" display_order="3" alt="">Linking them to family, friends, or professional help.</option>
   </answers>
-  <correct audio="">Correct! Proper documentation ensures transparency and accountability.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Signed rental agreement, quotations, logbooks, vendor invoice, and acknowledgement.</incorrect>
+  <correct audio="">Correct! Forcing calmness or giving false reassurance is never appropriate.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Forcing the person to calm down or giving false reassurance.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

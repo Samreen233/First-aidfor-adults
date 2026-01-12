@@ -1,17 +1,12 @@
 <?xml version="1.0"?>
-<content marked="false" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Review Question 7 of 8" closeText="OK">
-  <instructions>Select the correct response. Then select the I'm done button to check your answers.
-When you have completed the exercise, select Next to continue.</instructions>
-  <question>What is NIDA-Pakistan committed to under its transparency policy?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 34 of 34" closeText="OK">
+    <question>True or False: Psychological first aid aims to provide immediate support, not long-term therapy.</question>
   <answers>
-    <option correct="1">Total openness to partners and donors</option>
-    <option correct="0">Keeping financial data confidential</option>
-    <option correct="0">Only annual reporting</option>
-    <option correct="0">Providing internal data to staff only</option>
+    <option correct="1" display_order="0" alt="">True</option>
+    <option correct="0" display_order="1" alt="">False</option>
   </answers>
-  <correct>Correct! Transparency means full openness to partners and donors.</correct>
-  <incorrect>Incorrect. The correct answer is total openness to partners and donors.</incorrect>
-  <partial audio="">Select one item only.</partial>
-  <show_me audio="">
-  </show_me>
+  <correct audio="">Correct! PFA provides short-term support to stabilize and link to further help.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: True.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
 </content>

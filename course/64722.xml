@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 28 of 39" closeText="OK">
-    <question>Which of the following ensures transparency and accountability in financial management?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 11 of 20" closeText="OK">
+    <question>What should you do if an adult’s distress worsens during psychological first aid?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Maintaining proper documentation, approvals, and reconciliation processes.</option>
-    <option correct="0" display_order="1" alt="">Skipping approvals for urgent payments.</option>
-    <option correct="0" display_order="2" alt="">Paying vendors without supporting invoices.</option>
-    <option correct="0" display_order="3" alt="">Using verbal agreements instead of written contracts.</option>
+    <option correct="1" display_order="0" alt="">Continue support calmly and call for professional help if needed.</option>
+    <option correct="0" display_order="1" alt="">Ignore them and move to another person.</option>
+    <option correct="0" display_order="2" alt="">Force them to follow instructions immediately.</option>
+    <option correct="0" display_order="3" alt="">Give false reassurance to stop distress quickly.</option>
   </answers>
-  <correct audio="">Correct! Documentation and approval processes are essential for accountability.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Maintaining proper documentation, approvals, and reconciliation processes.</incorrect>
+  <correct audio="">Correct! Calm support and seeking professional help is the appropriate response.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Continue support calmly and call for professional help if needed.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

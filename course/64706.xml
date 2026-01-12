@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 10 of 39" closeText="OK">
-    <question>What is required when handling personal and confidential data at NIDA-Pakistan?</question>
+    <question>What is required when providing psychological first aid to ensure the safety and dignity of an adult in distress?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Ensure lawful, ethical, and secure collection, processing, and storage.</option>
-    <option correct="0" display_order="1" alt="">Share it freely with colleagues for convenience.</option>
-    <option correct="0" display_order="2" alt="">Use personal devices without security precautions.</option>
-    <option correct="0" display_order="3" alt="">Disclose data to external parties without authorization.</option>
+    <option correct="1" display_order="0" alt="">Ensure their emotional and physical safety, respect their dignity, and provide support appropriately.</option>
+    <option correct="0" display_order="1" alt="">Ignore their feelings and focus only on completing tasks quickly.</option>
+    <option correct="0" display_order="2" alt="">Provide incorrect or misleading information to calm them immediately.</option>
+    <option correct="0" display_order="3" alt="">Force them to follow instructions without consent.</option>
   </answers>
-  <correct audio="">Correct! Confidential data must always be handled securely and ethically.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Ensure lawful, ethical, and secure collection, processing, and storage.</incorrect>
+  <correct audio="">Correct! PFA requires ensuring safety, respecting dignity, and providing appropriate support.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Ensure their emotional and physical safety, respect their dignity, and provide support appropriately.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 32 of 39" closeText="OK">
-    <question>What is the purpose of a Purchase Request Form (PRF)?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 14 of 20" closeText="OK">
+    <question>Which is a cognitive reaction to distress?</question>
   <answers>
-    <option correct="0" display_order="0" alt="">To request funds for staff training without approvals.</option>
-    <option correct="1" display_order="1" alt="">To formally request goods, specify delivery, donor requirements, and authorizations.</option>
-    <option correct="0" display_order="2" alt="">To approve supplier invoices without verification.</option>
-    <option correct="0" display_order="3" alt="">To bypass comparative bidding for high-value items.</option>
+    <option correct="1" display_order="0" alt="">Difficulty concentrating or making decisions</option>
+    <option correct="0" display_order="1" alt="">Shivering</option>
+    <option correct="0" display_order="2" alt="">Rapid heartbeat</option>
+    <option correct="0" display_order="3" alt="">Crying</option>
   </answers>
-  <correct audio="">Correct! PRF ensures formal request, specifications, approvals, and compliance.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: To formally request goods, specify delivery, donor requirements, and authorizations.</incorrect>
+  <correct audio="">Correct! Trouble concentrating is a cognitive reaction to distress.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Difficulty concentrating or making decisions.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

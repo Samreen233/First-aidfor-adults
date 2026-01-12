@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    .score {
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .correct {
+      color: green;
+      font-weight: bold;
+    }
+
+    .incorrect {
+      color: red;
+      font-weight: bold;
+    }
+
+    .expired {
+      text-align: center;
+      color: orange;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Assessment Results</h2>
+  <div class="score" id="score"></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Question</th>
+        <th>Your Answer</th>
+        <th>Correct Answer</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody id="resultTable"></tbody>
+  </table>
+
+  <div class="expired" id="expiredMessage"></div>
+</div>
+
+<script>
+  const results = [
+    {
+      question: "Which is NOT a category of distress?",
+      user: localStorage.getItem("distressQuizAnswer"),
+      correct: "Chemical reactions"
+    },
+    {
+      question: "Trembling and shaking show distress.",
+      user: localStorage.getItem("distressTrueFalseAnswer"),
+      correct: "True"
+    },
+    {
+      question: "Actions to support the distressed lady",
+      user: JSON.parse(localStorage.getItem("psychologicalFirstAidAnswer") || "[]").join(", "),
+      correct: "Calm breathing, Contact EMS, Contact family"
+    },
+    {
+      question: "Three basic steps of psychological first aid",
+      user: JSON.parse(localStorage.getItem("psychologicalFirstAidSteps") || "[]").join(", "),
+      correct: "Look, Listen, Link"
+    },
+    {
+      question: "Definition of psychological first aid",
+      user: localStorage.getItem("pfaTrueFalseDefinition"),
+      correct: "True"
+    }
+  ];
+
+  const table = document.getElementById("resultTable");
+  let correctCount = 0;
+
+  results.forEach((item, index) => {
+    const isCorrect =
+      item.user &&
+      item.user.replace(/\s+/g, "").toLowerCase() ===
+      item.correct.replace(/\s+/g, "").toLowerCase();
+
+    if (isCorrect) correctCount++;
+
+    table.innerHTML += `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${item.question}</td>
+        <td>${item.user || "Not Answered"}</td>
+        <td>${item.correct}</td>
+        <td class="${isCorrect ? "correct" : "incorrect"}">
+          ${isCorrect ? "Correct" : "Incorrect"}
+        </td>
+      </tr>
+    `;
+  });
+
+  // Show total score
+  const scoreDiv = document.getElementById("score");
+  scoreDiv.textContent = `Your Score: ${correctCount} / ${results.length}`;
+
+  // Expire results after 30 seconds
+  setTimeout(() => {
+    localStorage.clear(); // Clear all stored answers
+    document.getElementById("expiredMessage").textContent = 
+      "⚠ Results expired. Please retake the quiz.";
+  }, 30000); // 30,000 ms = 30 seconds
+</script>
+
+</body>
+</html>

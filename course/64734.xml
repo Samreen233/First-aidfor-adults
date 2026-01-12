@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Module 7: Safeguarding – Question 2" closeText="OK">
-    <question>What is expected from all NIDA-Pakistan staff regarding child protection?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 26 of 34" closeText="OK">
+    <question>True or False: Behavioral signs of distress include withdrawing from social interactions and pacing.</question>
   <answers>
-    <option correct="0" display_order="1" alt="">Ignore minor incidents unless reported by the community.</option>
-    <option correct="1" display_order="0" alt="">Actively prevent, identify, and respond to any risk or incident of harm involving children.</option>
-    <option correct="0" display_order="2" alt="">Leave safeguarding to managers only.</option>
-    <option correct="0" display_order="3" alt="">Focus only on documentation without taking action.</option>
+    <option correct="1" display_order="0" alt="">True</option>
+    <option correct="0" display_order="1" alt="">False</option>
   </answers>
-  <correct audio="">Correct! All staff have a responsibility to actively safeguard children and prevent harm.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Actively prevent, identify, and respond to any risk or incident of harm involving children.</incorrect>
+  <correct audio="">Correct! Withdrawal and pacing are common behavioral reactions to distress.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: True.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

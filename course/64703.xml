@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 7 of 39" closeText="OK">
-    <question>Which of the following is prohibited while representing NIDA-Pakistan?</question>
+    <question>Which of the following actions should NOT be done when providing psychological first aid to an adult?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Engaging in political campaigning or promoting religious beliefs.</option>
-    <option correct="0" display_order="1" alt="">Wearing proper uniforms during duty hours.</option>
-    <option correct="0" display_order="2" alt="">Reporting incidents of misconduct.</option>
-    <option correct="0" display_order="3" alt="">Respecting colleagues and community members.</option>
+    <option correct="1" display_order="0" alt="">Forcing the adult to calm down or ignoring their emotional needs.</option>
+    <option correct="0" display_order="1" alt="">Listening actively and showing empathy.</option>
+    <option correct="0" display_order="2" alt="">Supporting their basic needs and safety.</option>
+    <option correct="0" display_order="3" alt="">Linking them to family, friends, or professional help.</option>
   </answers>
-  <correct audio="">Correct! Political and religious advocacy while representing NIDA-Pakistan is strictly prohibited.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Engaging in political campaigning or promoting religious beliefs.</incorrect>
+  <correct audio="">Correct! Forcing calmness or ignoring emotional needs should never be done in PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Forcing the adult to calm down or ignoring their emotional needs.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

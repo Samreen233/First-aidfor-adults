@@ -1,17 +1,14 @@
 <?xml version="1.0"?>
-<content marked="false" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Review Question 8 of 8" closeText="OK">
-  <instructions>Select the correct response. Then select the I'm done button to check your answers.
-When you have completed the exercise, select Next to continue.</instructions>
-  <question>Who conducts the external audit of NIDA-Pakistan's financial transactions?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 12 of 39" closeText="OK">
+    <question>Who should be considered a priority when providing psychological first aid in an emergency?</question>
   <answers>
-    <option correct="1">An independent firm of chartered accountants</option>
-    <option correct="0">Internal finance team</option>
-    <option correct="0">Project managers</option>
-    <option correct="0">Local vendors</option>
+    <option correct="1" display_order="0" alt="">Adults showing severe distress, panic, or physical signs of a medical emergency.</option>
+    <option correct="0" display_order="1" alt="">Adults who appear calm and unresponsive.</option>
+    <option correct="0" display_order="2" alt="">Bystanders not affected by the situation.</option>
+    <option correct="0" display_order="3" alt="">Individuals already receiving professional help elsewhere.</option>
   </answers>
-  <correct>Correct! External audits are done by independent chartered accountants.</correct>
-  <incorrect>Incorrect. The correct answer is an independent firm of chartered accountants.</incorrect>
-  <partial audio="">Select one item only.</partial>
-  <show_me audio="">
-  </show_me>
+  <correct audio="">Correct! Adults showing severe distress or emergency signs should be prioritized in PFA.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Adults showing severe distress, panic, or physical signs of a medical emergency.</incorrect>
+  <partial audio=""></partial>
+  <show_me audio=""></show_me>
 </content>

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 4 of 39" closeText="OK">
-    <question>When was NIDA-Pakistan established?</question>
+    <question>What is the first step when approaching an adult in need of psychological first aid?</question>
   <answers>
-    <option correct="0" display_order="0" alt="">2010</option>
-    <option correct="0" display_order="1" alt="">2015</option>
-    <option correct="1" display_order="2" alt="">2008</option>
-    <option correct="0" display_order="3" alt="">2020</option>
+    <option correct="1" display_order="0" alt="">Look: Identify those who need help and prioritize the most urgent cases.</option>
+    <option correct="0" display_order="1" alt="">Listen: Immediately give advice without assessing the situation.</option>
+    <option correct="0" display_order="2" alt="">Link: Contact family members before assessing distress.</option>
+    <option correct="0" display_order="3" alt="">Ignore the situation and wait for someone else to act.</option>
   </answers>
-  <correct audio="">Correct! NIDA-Pakistan was registered in 2008.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: 2008.</incorrect>
+  <correct audio="">Correct! The first step is to Look: identify who needs help and prioritize.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Look – identify who needs help and prioritize the most urgent cases.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Psychological First Aid – True or False</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            /* padding: 40px; */
+        }
+
+        .quiz-container {
+            /* background: #ffffff; */
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+        }
+
+        .option {
+            margin: 12px 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <h2>True or False</h2>
+        <p>
+            Psychological first aid is about providing basic human support, delivering practical information,
+            and showing empathy, concern, respect, and confidence in the abilities of the individual.
+        </p>
+
+        <form>
+            <div class="option">
+                <input type="radio" name="answer" value="True">
+                True
+            </div>
+
+            <div class="option">
+                <input type="radio" name="answer" value="False">
+                False
+            </div>
+
+            <button type="button" id="submitBtn" onclick="checkAnswer()">Submit</button>
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const selected = document.querySelector('input[name="answer"]:checked');
+            const resultDiv = document.getElementById("result");
+            const submitBtn = document.getElementById("submitBtn");
+            const options = document.querySelectorAll('input[name="answer"]');
+
+            if (!selected) {
+                alert("Please select an answer.");
+                return;
+            }
+
+            const userAnswer = selected.value;
+            const correctAnswer = "True";
+
+            // Save answer
+            localStorage.setItem("pfaTrueFalseDefinition", userAnswer);
+
+            // Lock inputs
+            options.forEach(opt => opt.disabled = true);
+            submitBtn.disabled = true;
+
+            if (userAnswer === correctAnswer) {
+                resultDiv.innerHTML =
+                    "✔ Correct! Psychological First Aid focuses on basic support, empathy, and practical help.";
+                resultDiv.className = "result correct";
+            } else {
+                resultDiv.innerHTML =
+                    "✖ Incorrect.<br><strong>Correct answer:</strong> True";
+                resultDiv.className = "result incorrect";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

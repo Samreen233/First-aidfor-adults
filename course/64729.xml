@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
-
-<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 35 of 39" closeText="OK">
-    <question>What is the “five rights” principle in logistics?</question>
+<content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 18 of 20" closeText="OK">
+    <question>Which of the following are steps to calm an adult in distress? (Select all that apply)</question>
   <answers>
-    <option correct="0" display_order="1" alt="">Right supplier, right marketing, right branding, right promotion, right visibility.</option>
-    <option correct="0" display_order="2" alt="">Right color, right style, right design, right packaging, right label.</option>
-    <option correct="0" display_order="3" alt="">Right donor, right fund, right documentation, right approval, right recipient.</option>
-    <option correct="1" display_order="0" alt="">Right goods, right quantity, right quality, right time, right price.</option>
+    <option correct="1" display_order="0" alt="">Guide them to take slow, deep breaths.</option>
+    <option correct="1" display_order="1" alt="">Speak calmly and reassure without forcing responses.</option>
+    <option correct="0" display_order="2" alt="">Force them to sit or stop shaking immediately.</option>
+    <option correct="0" display_order="3" alt="">Ignore their emotional state and focus only on tasks.</option>
   </answers>
-  <correct audio="">Correct! Logistics ensures goods meet quantity, quality, timing, and cost requirements.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Right goods, right quantity, right quality, right time, right price.</incorrect>
+  <correct audio="">Correct! Breathing guidance and calm reassurance help manage distress safely.</correct>
+  <incorrect audio="">Incorrect. The correct answers are: Slow deep breaths and calm reassurance without forcing.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

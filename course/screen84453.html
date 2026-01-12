@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .text-section {
+            flex: 1;
+        }
+
+        .text-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .text-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Left Side: Text -->
+        <div class="text-section">
+            <h2>Key points on psychological first aid</h2>
+            <h3>Psychological first aid is: </h3>
+            <ul>
+                <li>Comforting people and helping them to feel calm</li>
+                <li>Providing practical care and support</li>
+                <li>Helping people to address immediate basic needs such as providing water, information, or simply a
+                    blanket, for example</li>
+                <li>Listening to people, but not pressuring them to talk</li>
+                <li>Helping people connect to information, services and social support</li>
+            </ul>
+            <p>In order to provide effective psychological first aid, use the action principles of Look, Listen, and
+                Link.</p>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="image-section">
+            <img src="../media/content/Screenshot 2026-01-12 235222.png" alt="Psychological First Aid Support">
+        </div>
+    </div>
+
+</body>
+
+</html>

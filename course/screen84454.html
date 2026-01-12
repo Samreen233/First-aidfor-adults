@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .text-section {
+            flex: 1;
+        }
+
+        .text-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .text-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Left Side: Text -->
+        <div class="text-section">
+            <h2>Final thoughts</h2>
+            <h3>Congratulations!</h3>
+            <p>On behalf of the team at the IFRC, congratulations on completing the course First Aid for Adults.
+
+                First aid is a fundamental life skill and, like any skill, it needs to be developed over time or you
+                will eventually fall out of practice.
+
+                Nine topics and many completed quiz questions later, we hope that you have expanded your knowledge and
+                feel more confident in your ability to apply the first aid techniques covered in this course.</p>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="image-section">
+            <img src="../media/content/Screenshot 2026-01-12 235827.png" alt="Psychological First Aid Support">
+        </div>
+    </div>
+
+</body>
+
+</html>

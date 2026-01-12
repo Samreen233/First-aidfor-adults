@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 2 of 39" closeText="OK">
-    <question>Which of the following principles guide NIDA-Pakistan’s operations?</question>
+    <question>Which of the following actions are appropriate when providing psychological first aid to an adult in distress?</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Transparency, accountability, and inclusivity.</option>
-    <option correct="0" display_order="1" alt="">Profit maximization at all costs.</option>
-    <option correct="0" display_order="2" alt="">Political neutrality only.</option>
-    <option correct="0" display_order="3" alt="">Strict adherence to urban projects.</option>
+    <option correct="1" display_order="0" alt="">Calm the person, support their breathing, and help them maintain focus.</option>
+    <option correct="0" display_order="1" alt="">Tell them to stop shaking and force them to calm down.</option>
+    <option correct="1" display_order="2" alt="">Contact emergency services if help has not arrived yet.</option>
+    <option correct="1" display_order="3" alt="">Assist them to connect with supportive family or friends.</option>
+    <option correct="0" display_order="4" alt="">Grab them by the arm and remove them from the situation.</option>
   </answers>
-  <correct audio="">Correct! Transparency, accountability, and inclusivity are core principles.</correct>
-  <incorrect audio="">Incorrect. The correct answer is: Transparency, accountability, and inclusivity.</incorrect>
+  <correct audio="">Correct! Calm support, contacting help, and linking them to support are appropriate PFA actions.</correct>
+  <incorrect audio="">Incorrect. The correct answers are: Calm support, contact emergency services, and connect them with family or friends.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>
