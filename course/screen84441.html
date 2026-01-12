@@ -1,56 +1,102 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Module 8 – Summary</title>
+  <meta charset="UTF-8">
+  <title>Burn Aftercare</title>
 
-    <script>
-        function Initialize() { InitSound(); }
-        function InitSound() { }
-        var isAssessment = false;
-    </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
 
-    <script src="utility.js"></script>
-    <script src="screenUtils.js"></script>
-    <script src="interactiveUtils.js"></script>
-    <script src="jquery.js"></script>
+    .container {
+      max-width: 1000px;
+      /* margin: 40px auto; */
+      padding: 20px;
+    }
+
+    .content {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .text-section {
+      flex: 1;
+    }
+
+    .image-section {
+      flex: 1;
+      text-align: right;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Responsive layout for small screens */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .image-section {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
-<body class="contentBody" onload="Initialize();">
+<body>
 
-    <div id="Water_Mark"></div>
+  <div class="container">
+    <div class="content">
 
-    <!-- LEFT TEXT -->
-    <div id="UDUTU_Text1" class="text left top textHalfWidth fullHeight">
-        <div class="textHeadline">Module 8 Summary</div>
+      <!-- LEFT TEXT -->
+      <div class="text-section">
+        <h1>Providing psychological first aid</h1>
+        <p>
+          Psychological first aid is about providing basic, human support, delivering practical information and showing
+          empathy, concern, respect and confidence in the abilities of the individual. It is offered to individuals
+          immediately after a critical event and should form part of a first aider’s basic response.
+        </p>
 
-        <div class="textContent">
-            <p>
-                This module introduced the fundamentals of <strong>First Aid for Adults</strong>.
-                You learned how to respond to common emergencies, assess safety, and provide
-                immediate care until professional medical help arrives.
-            </p>
+        <h4>Watch the video below for a basic introduction to psychological first aid. </h4>
 
-            <p>
-                Understanding basic first aid helps reduce risk, saves lives, and ensures a
-                safer working environment for everyone.
-            </p>
+      </div>
 
-            <p><strong style="color:#b01c05;">
-                    Select Next to complete this module.
-                </strong></p>
-        </div>
+      <!-- RIGHT IMAGE -->
+      <div class="image-section">
+        <iframe width="430" height="300" src="https://www.youtube.com/embed/kly45u9ml_A" title="Psychological first aid - look, listen, link" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
     </div>
-
-    <!-- RIGHT IMAGE -->
-    <div id="UDUTU_MultiMedia1" class="image right top imageHalfWidth imageRegHeight">
-        <img id="UDUTU_MultiMedia1_Content" src="../media/content/first_aid_adults.png" width="448" height="336"
-            alt="First Aid for Adults" />
-    </div>
-
-    <span id="UDUTU_Narration" style="visibility:hidden;">
-        ../Media/Content/sample.mp3
-    </span>
+  </div>
 
 </body>
 

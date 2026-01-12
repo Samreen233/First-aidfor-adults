@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Page</title>
+    <script>function Initialize() { InitSound(); } function InitSound() { } var isAssessment = false;</script>
+    <script src="utility.js"></script>
+    <script src="screenUtils.js"></script>
+    <script src="interactiveUtils.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h3 {
+            color: #003366;
+            cursor: pointer;
+            margin: 0;
+            padding: 10px;
+            background-color: #e6e6e6;
+            border-radius: 8px;
+        }
+
+        .section-content {
+            display: none;
+            padding: 10px 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .note {
+            background-color: #e6f7ff;
+            padding: 10px;
+            border-left: 5px solid #3399ff;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function toggleSection(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+
+<body class="contentBody" onload="Initialize();">
+    <div id="Water_Mark"></div>
+    <div id="UDUTU_Text1" class="text left top textHalfWidth fullHeight">
+        <div class="textHeadline" id="UDUTU_Text1_Headline">Providing psychological first aid(continued)</div>
+        <div class="textContent" id="UDUTU_Text1_Content">
+            <p>In order to provide psychological first aid effectively, it is recommended that you use the three
+                psychological first aid action points: Look, Listen, and Link.&nbsp;</p>
+            <div class="section">
+                <h3 onclick="toggleSection('sec9')">Look</h3>
+                <div id="sec9" class="section-content">
+                    <p><b>Prioritize: </b>Who needs your help the most? Are there many people displaying signs of
+                        distress and
+                        who do you feel needs your help most urgently?</p>
+                    <p>
+                        <b>Emotional reactions:</b> Is anyone so distressed that you feel they need professional help
+                        that is
+                        beyond the scope of your capabilities in psychological first aid?
+                    </p>
+                    <p><b>Behavioral reactions:</b> Is someone acting in a way that is a danger to themselves or those
+                        around them? What can you say or do to keep yourself and those around you safe?
+                    </p>
+                    <img src="../media/content/Screenshot 2026-01-12 124800.png" alt="">
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 onclick="toggleSection('sec10')">Listen</h3>
+                <div id="sec10" class="section-content">
+                    <p>
+                        <b>Approach the person who needs help:</b> Be calm, respectful, and act in a culturally
+                        appropriate way. Introduce yourself and ask the person if they need help, but do not impose help
+                        if they do not want it.
+                    </p>
+                    <p><b>Show that you are paying attention:</b> Listen actively through your body language and
+                        attitude. Ask about their needs and concerns. Try to help the affected person(s) identify what
+                        help they need. Do not ask them to go into detail about what has happened or how they feel -
+                        focus on what they need. Gather as much information as you can to help you link them to the help
+                        that they need.</p>
+                    <p><b>Show that you accept their feelings:</b> Do not judge the person’s reactions or feelings, even
+                        if they are different from how you think you would react.</p>
+                    <p><b>Calm the person:</b> Help the person feel calm and supported, by remaining calm yourself,
+                        speaking in a soft voice and supporting the person to breathe and maintain focus.
+
+                    </p>
+                    <img src="../media/content/Screenshot 2026-01-12 125955.png" alt="">
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 onclick="toggleSection('sec11')">Link</h3>
+                <div id="sec11" class="section-content">
+                    <p>
+                        <b>Help people address basic needs:</b>Does the person need a warm blanket or some water to
+                        drink?
+                    </p>
+                    <p><b>Connect:</b> Help the injured person to connect with loved ones and other social support.
+                    </p>
+                    <p><b>Provide information:</b> Provide factual information about the event and where to get further
+                        help to access emergency services, for example.
+
+                    </p>
+                    <img src="../media/content/Screenshot 2026-01-12 130256.png" alt="">
+                </div>
+            </div>
+
+            <p>&nbsp;</p>
+            <p><strong>
+                    <font color="#b01c05">Select Next to continue.</font>
+                </strong></p>
+        </div>
+        <div id="UDUTU_Text1_EditContent" class="editPanel">
+            <p>text editing options</p>
+            <div id="UDUTU_Text1_btnAdd"></div>
+            <div id="UDUTU_Text1_btnEdit"></div>
+            <div id="UDUTU_Text1_btnSelect"></div>
+        </div>
+    </div>
+
+    <div id="UDUTU_MultiMedia1" class="image right top imageHalfWidth imageRegHeight">
+        <!-- <img id="UDUTU_MultiMedia1_Content" class="SomeClass" title="Person holding a magnifying glass" width='448'
+			height='336' src='../media/content/Screenshot 2025-12-24 115454.png' srcWidth='448' srcHeight='336'
+			ALT='Person holding a magnifying glass'> -->
+
+        <div id="UDUTU_MultiMedia1_EditContent" class="editPanel">
+            <p>media editing options</p>
+            <div id="UDUTU_MultiMedia1_btnAdd"></div>
+            <div id="UDUTU_MultiMedia1_btnEdit"></div>
+            <div id="UDUTU_MultiMedia1_btnSelect"></div>
+        </div>
+
+        <div id="UDUTU_MultiMedia1_Caption" class="caption">
+            <div id="UDUTU_MultiMedia1_Caption_Content" class="capText"></div>
+            <div id="UDUTU_MultiMedia1_Caption_EditContent" class="editPanel">
+                <p>edit caption</p>
+                <div id="UDUTU_MultiMedia1_Caption_btnEdit"></div>
+            </div>
+        </div>
+    </div>
+    <span ID="UDUTU_Narration" NAME="UDUTU_Narration" style="visibility: hidden;">../Media/Content/sample.mp3</span>
+</body>
+
+</html>

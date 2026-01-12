@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Burn Aftercare</title>
+
   <style>
     html,
     body {
@@ -14,36 +15,59 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: 40px auto; /* center the block horizontally */
-      padding: 20px;
-      /* background-color: #fff; */
-      border-radius: 8px;
-      /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+      max-width: 1000px;
+      /* margin: 40px auto; */
+      padding: 15px;
+    }
+
+    .content {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .text-section {
+      flex: 1;
+    }
+
+    .image-section {
+      flex: 1;
+      text-align: right;
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
     }
 
     h1 {
       font-size: 36px;
       margin-bottom: 20px;
       color: #333;
-      text-align: left; /* left-align heading */
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #333;
     }
 
     p {
       font-size: 18px;
       color: #555;
       line-height: 1.6;
-      text-align: left; /* left-align paragraph */
       margin-bottom: 15px;
     }
 
-    ul {
-      margin-left: 20px; /* indent list slightly */
-      color: #555;
-    }
+    /* Responsive layout for small screens */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
 
-    li {
-      margin-bottom: 10px;
+      .image-section {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -51,10 +75,32 @@
 <body>
 
   <div class="container">
-    <h1>Key points on minor burns</h1>
-    <p>The key word to remember when dealing with burns is cooling. If someone burns themselves, act fast and cool the area as quickly as possible.</p>
-   <h3>Prevention is the greatest cure </h3>
-   <p>Remember, prevention is key. The kitchen is an especially high risk place for burns, but this risk can be  reduced by taking  simple preventative steps. Be especially careful when cooking with hot liquids.  Always try to wear protective clothing or equipment such as cooking gloves. Similarly, take care when using heat sources and make sure that children are kept away from dangerous areas when you are cooking.</p>
+    <div class="content">
+
+      <!-- LEFT TEXT -->
+      <div class="text-section">
+        <h1>Key points on minor burns</h1>
+        <p>
+          The key word to remember when dealing with burns is cooling.
+          If someone burns themselves, act fast and cool the area as quickly as possible.
+        </p>
+
+        <h3>Prevention is the greatest cure</h3>
+        <p>
+          Remember, prevention is key. The kitchen is an especially high risk place for burns,
+          but this risk can be reduced by taking simple preventative steps. Be especially careful
+          when cooking with hot liquids. Always try to wear protective clothing or equipment such
+          as cooking gloves. Similarly, take care when using heat sources and make sure that
+          children are kept away from dangerous areas when you are cooking.
+        </p>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="image-section">
+        <img src="../media/content/Screenshot 2026-01-12 123254.png" alt="Burn Prevention Image">
+      </div>
+
+    </div>
   </div>
 
 </body>

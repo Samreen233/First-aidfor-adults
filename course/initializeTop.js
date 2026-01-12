@@ -856,15 +856,15 @@ function getNextScreen() {
 
 
 	/*  FOLLOWING ADDED BY DAN HERR - Force Lesson 6 Summary screen to go to menu - AUGUST 2016 */
-	if (currScreen.id == "64695") {
-		//Lesson 6 Summary Screen = screen64695.html
-		for (var j = 0; j < gblScreens.length; j++) {
-			if (gblScreens[j].id === "76439") {
-				//Main Menu = screen76439.html
-				return gblScreens[j];
-			}
-		}
-	}
+	// if (currScreen.id == "64695") {
+	// 	//Lesson 6 Summary Screen = screen64695.html
+	// 	for (var j = 0; j < gblScreens.length; j++) {
+	// 		if (gblScreens[j].id === "76439") {
+	// 			//Main Menu = screen76439.html
+	// 			return gblScreens[j];
+	// 		}
+	// 	}
+	// }
 	/* END ADDITION */
 	
 	
