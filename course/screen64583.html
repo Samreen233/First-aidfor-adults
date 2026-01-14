@@ -3,28 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Q2: Mask Reuse</title>
+
+  <style>
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+
   <script>
     function checkAnswer() {
       const selected = document.querySelector('input[name="quizOption"]:checked');
+      const resultDiv = document.getElementById("result");
+
       if (!selected) {
-        alert("Please select an answer.");
+        resultDiv.textContent = "Please select an answer.";
+        resultDiv.className = "incorrect";
         return;
       }
 
-      // Save user answer in localStorage
+      // Save user answer
       localStorage.setItem("q2", selected.value);
 
-      const correctAnswer = "false"; // Correct answer is False
+      const correctAnswer = "false"; // Correct answer
 
       if (selected.value === correctAnswer) {
-        alert("✅ Correct! Masks should NOT be reused or shared with others.");
-        UDUTU_API.goScreen(84443); // Replace with next screen ID
+        resultDiv.textContent =
+          "✅ Correct! Masks should NOT be reused or shared with others.";
+        resultDiv.className = "correct";
+
+        // Go to next screen
+        UDUTU_API.goScreen(84443);
       } else {
-        alert("❌ Incorrect. Masks should NOT be reused or shared with others.");
+        resultDiv.textContent =
+          "❌ Incorrect. Masks should NOT be reused or shared with others.";
+        resultDiv.className = "incorrect";
       }
     }
   </script>
 </head>
+
 <body>
   <p>A mask can be used more than one time and can be shared with others. True or False?</p>
 
@@ -37,5 +61,8 @@
 
     <button type="button" onclick="checkAnswer()">Submit Answer</button>
   </form>
+
+  <!-- Feedback message -->
+  <div id="result"></div>
 </body>
 </html>

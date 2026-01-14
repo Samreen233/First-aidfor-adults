@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 33 of 34" closeText="OK">
-    <question>Which of the following are considered physical signs that an adult is under severe stress? (Select all that apply)</question>
+    <question>Which of the following is the most obvious physical sign that an adult is under severe stress? (Select only one)</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Rapid heartbeat or palpitations</option>
-    <option correct="1" display_order="1" alt="">Sweating or shaking</option>
-    <option correct="0" display_order="2" alt="">Calm breathing</option>
-    <option correct="0" display_order="3" alt="">Relaxed posture</option>
+    <option correct="0" display_order="0" alt="">Calm breathing</option>
+    <option correct="1" display_order="1" alt="">Rapid heartbeat or palpitations</option>
+    <option correct="0" display_order="2" alt="">Relaxed posture</option>
+    <option correct="0" display_order="3" alt="">Sweating or shaking</option>
   </answers>
-  <correct audio="">Correct! Rapid heartbeat, sweating, and shaking are signs of severe stress.</correct>
-  <incorrect audio="">Incorrect. The correct answers are: Rapid heartbeat, sweating, and shaking.</incorrect>
+  <correct audio="">Correct! Rapid heartbeat or palpitations is the most obvious sign of severe stress.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Rapid heartbeat or palpitations.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

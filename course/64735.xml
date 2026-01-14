@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 27 of 34" closeText="OK">
-    <question>Which of the following are safe ways to calm an adult showing distress? (Select all that apply)</question>
+    <question>Which of the following is the most important way to calm an adult showing distress? (Select only one)</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Encourage slow, deep breathing and provide reassurance calmly.</option>
-    <option correct="1" display_order="1" alt="">Listen actively without judgment and acknowledge feelings.</option>
+    <option correct="0" display_order="0" alt="">Ignore their emotional state and focus only on tasks.</option>
+    <option correct="1" display_order="1" alt="">Encourage slow, deep breathing and provide reassurance calmly.</option>
     <option correct="0" display_order="2" alt="">Force them to stop shaking or crying immediately.</option>
-    <option correct="0" display_order="3" alt="">Ignore their emotional state and focus only on tasks.</option>
+    <option correct="0" display_order="3" alt="">Listen actively without judgment and acknowledge feelings.</option>
   </answers>
-  <correct audio="">Correct! Calm reassurance and active listening are effective PFA techniques.</correct>
-  <incorrect audio="">Incorrect. The correct answers are: Encourage slow breathing and listen actively.</incorrect>
+  <correct audio="">Correct! Encouraging slow, deep breathing and calm reassurance is the most important step.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Encourage slow, deep breathing and provide reassurance calmly.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

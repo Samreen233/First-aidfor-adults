@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Psychological First Aid Quiz</title>
@@ -23,14 +24,20 @@
       margin: 10px 0;
     }
 
-    button {
+         button {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
+      background-color: #cdd2d8;
+      color: black;
+      border: 1px;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #828588;
+
+
     }
 
     button:disabled {
@@ -53,100 +60,103 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="quiz-container">
-  <h2>Question</h2>
-  <p>
-    You assess the situation and determine that this lady is the priority for psychological first aid.
-    From the list below, what are some of the actions that you could take to support the lady?
-  </p>
+  <div class="quiz-container">
+    <h2>Question</h2>
+    <p>
+      You assess the situation and determine that this lady is the priority for psychological first aid.
+      From the list below, what are some of the actions that you could take to support the lady?
+    </p>
 
-  <form id="quizForm">
-    <div class="option">
-      <input type="checkbox" value="Calm breathing">
-      Calm the lady by supporting her to breathe and maintain focus.
-    </div>
+    <form id="quizForm">
+      <div class="option">
+        <input type="checkbox" value="Calm breathing">
+        Calm the lady by supporting her to breathe and maintain focus.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Contact EMS">
-      Contact the emergency medical services if someone hasn't done so already to show the lady that help is on the way.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Contact EMS">
+        Contact the emergency medical services if someone hasn't done so already to show the lady that help is on the
+        way.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Tell her to stop">
-      Tell the lady to stop shaking and calm down.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Tell her to stop">
+        Tell the lady to stop shaking and calm down.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Contact family">
-      Help them contact other family members that will be able to support her.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Contact family">
+        Help them contact other family members that will be able to support her.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Grab and remove">
-      Grab the lady by the arm and take her away from the scene.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Grab and remove">
+        Grab the lady by the arm and take her away from the scene.
+      </div>
 
-    <button type="button" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
-  </form>
+      <button type="button" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+    </form>
 
-  <div class="result" id="result"></div>
-</div>
+    <div class="result" id="result"></div>
+  </div>
 
-<script>
-  function checkAnswer() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const resultDiv = document.getElementById("result");
-    const submitBtn = document.getElementById("submitBtn");
+  <script>
+    function checkAnswer() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const resultDiv = document.getElementById("result");
+      const submitBtn = document.getElementById("submitBtn");
 
-    const selectedAnswers = [];
-    checkboxes.forEach(cb => {
-      if (cb.checked) selectedAnswers.push(cb.value);
-    });
+      const selectedAnswers = [];
+      checkboxes.forEach(cb => {
+        if (cb.checked) selectedAnswers.push(cb.value);
+      });
 
-    if (selectedAnswers.length === 0) {
-      alert("Please select at least one option.");
-      return;
-    }
+      if (selectedAnswers.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
 
-    // Correct answers
-    const correctAnswers = [
-      "Calm breathing",
-      "Contact EMS",
-      "Contact family"
-    ];
+      // Correct answers
+      const correctAnswers = [
+        "Calm breathing",
+        "Contact EMS",
+        "Contact family"
+      ];
 
-    // Save to localStorage
-    localStorage.setItem(
-      "psychologicalFirstAidAnswer",
-      JSON.stringify(selectedAnswers)
-    );
+      // Save to localStorage
+      localStorage.setItem(
+        "psychologicalFirstAidAnswer",
+        JSON.stringify(selectedAnswers)
+      );
 
-    // Lock options
-    checkboxes.forEach(cb => cb.disabled = true);
-    submitBtn.disabled = true;
+      // Lock options
+      checkboxes.forEach(cb => cb.disabled = true);
+      submitBtn.disabled = true;
 
-    // Check correctness
-    const isCorrect =
-      selectedAnswers.length === correctAnswers.length &&
-      selectedAnswers.every(ans => correctAnswers.includes(ans));
+      // Check correctness
+      const isCorrect =
+        selectedAnswers.length === correctAnswers.length &&
+        selectedAnswers.every(ans => correctAnswers.includes(ans));
 
-    if (isCorrect) {
-      resultDiv.innerHTML = "✔ Correct! These actions provide appropriate psychological first aid.";
-      resultDiv.className = "result correct";
-    } else {
-      resultDiv.innerHTML = `
+      if (isCorrect) {
+        resultDiv.innerHTML = "✔ Correct! These actions provide appropriate psychological first aid.";
+        resultDiv.className = "result correct";
+      } else {
+        resultDiv.innerHTML = `
         ✖ Incorrect.<br>
         <strong>Correct actions are:</strong><br>
         • Calm the lady by supporting her to breathe and maintain focus<br>
         • Contact emergency medical services if not already done<br>
         • Help contact other family members for support
       `;
-      resultDiv.className = "result incorrect";
+        resultDiv.className = "result incorrect";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

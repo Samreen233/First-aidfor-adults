@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CPR Knowledge Check</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,18 +16,8 @@
       max-width: 800px;
     }
 
-    .question {
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
     .option {
       margin-bottom: 18px;
-    }
-
-    .option input {
-      margin-right: 10px;
     }
 
     button {
@@ -38,7 +29,6 @@
     .feedback {
       margin-top: 20px;
       font-weight: bold;
-      display: none;
     }
 
     .correct {
@@ -53,7 +43,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="quiz-container">
 
     <p>
       After providing 30 chest compressions, you move on to give two rescue
@@ -91,48 +81,41 @@
       </div>
 
       <button type="button" onclick="checkAnswer()">Submit</button>
-
     </form>
 
-    <div id="correctFeedback" class="feedback correct">
-      ✔ Correct
-    </div>
-
-    <div id="incorrectFeedback" class="feedback incorrect">
-      ✖ Incorrect
-    </div>
+    <!-- Feedback -->
+    <div id="result" class="feedback"></div>
 
   </div>
 
   <script>
     function checkAnswer() {
       const selected = document.querySelector('input[name="q_rescue"]:checked');
+      const resultDiv = document.getElementById("result");
 
       if (!selected) {
-        alert("Please select an answer.");
+        resultDiv.textContent = "Please select an answer.";
+        resultDiv.className = "feedback incorrect";
         return;
       }
 
-      // Save answer in localStorage
+      // Save answer
       localStorage.setItem("q_rescue", selected.value);
-
-      // Save completion timestamp (for expiry system)
       localStorage.setItem("quizCompletedAt", Date.now());
 
-      // Correct answer value
       const correctAnswer = "chest_rises";
 
-      document.getElementById("correctFeedback").style.display = "none";
-      document.getElementById("incorrectFeedback").style.display = "none";
-
       if (selected.value === correctAnswer) {
-        document.getElementById("correctFeedback").style.display = "block";
+        resultDiv.textContent = "✅ Correct!";
+        resultDiv.className = "feedback correct";
       } else {
-        document.getElementById("incorrectFeedback").style.display = "block";
+        resultDiv.innerHTML =
+          "❌ Incorrect.<br><strong>Correct answer is:</strong><br>" +
+          "You know you’ve given an effective rescue breath when their chest rises.";
+        resultDiv.className = "feedback incorrect";
       }
     }
   </script>
 
 </body>
-
 </html>

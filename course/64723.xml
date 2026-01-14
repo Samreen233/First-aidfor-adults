@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 12 of 20" closeText="OK">
-    <question>Which of the following are physical signs of distress? (Select all that apply)</question>
+    <question>Which of the following is the most obvious physical sign of distress? (Select only one)</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Trembling or shaking</option>
-    <option correct="1" display_order="1" alt="">Sweating excessively</option>
-    <option correct="0" display_order="2" alt="">Reading calmly</option>
-    <option correct="0" display_order="3" alt="">Sleeping peacefully</option>
+    <option correct="0" display_order="0" alt="">Reading calmly</option>
+    <option correct="1" display_order="1" alt="">Trembling or shaking</option>
+    <option correct="0" display_order="2" alt="">Sleeping peacefully</option>
+    <option correct="0" display_order="3" alt="">Sweating excessively</option>
   </answers>
-  <correct audio="">Correct! Trembling, shaking, and sweating are physical distress signs.</correct>
-  <incorrect audio="">Incorrect. The correct answers are: Trembling/shaking and sweating.</incorrect>
+  <correct audio="">Correct! Trembling or shaking is the most obvious physical sign of distress.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Trembling or shaking.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

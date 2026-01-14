@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Q3: Handwashing</title>
+
+	<style>
+		#result {
+			margin-top: 15px;
+			font-weight: bold;
+		}
+		.correct {
+			color: green;
+		}
+		.incorrect {
+			color: red;
+		}
+	</style>
+
 	<script>
 		function checkAnswer() {
 			const selected = document.querySelector('input[name="quizOption"]:checked');
+			const resultDiv = document.getElementById("result");
+
 			if (!selected) {
-				alert("Please select an answer.");
+				resultDiv.textContent = "Please select an answer.";
+				resultDiv.className = "incorrect";
 				return;
 			}
 
-			// Save user answer in localStorage
+			// Save user answer
 			localStorage.setItem("q3", selected.value);
 
-			const correctAnswer = "false"; // Correct answer is False
+			const correctAnswer = "false"; // Correct answer
 
 			if (selected.value === correctAnswer) {
-				alert("✅ Correct! Wash hands BOTH before and after providing first aid.");
-				UDUTU_API.goScreen(84444); // Replace with your next screen ID
+				resultDiv.textContent =
+					"✅ Correct! Wash hands BOTH before and after providing first aid.";
+				resultDiv.className = "correct";
+
+				// Go to next screen
+				UDUTU_API.goScreen(84444);
 			} else {
-				alert("❌ Incorrect. Wash hands BOTH before and after providing first aid.");
+				resultDiv.textContent =
+					"❌ Incorrect. Wash hands BOTH before and after providing first aid.";
+				resultDiv.className = "incorrect";
 			}
 		}
 	</script>
@@ -39,6 +61,8 @@
 
 		<button type="button" onclick="checkAnswer()">Submit Answer</button>
 	</form>
-</body>
 
+	<!-- Feedback message -->
+	<div id="result"></div>
+</body>
 </html>

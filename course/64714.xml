@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 3 of 20" closeText="OK">
-    <question>Which of the following actions are appropriate when providing psychological first aid? (Select all that apply)</question>
+    <question>Which of the following actions is the most appropriate when providing psychological first aid? (Select only one)</question>
   <answers>
     <option correct="1" display_order="0" alt="">Calm the person and support their breathing.</option>
     <option correct="0" display_order="1" alt="">Tell them to stop shaking immediately.</option>
-    <option correct="1" display_order="2" alt="">Contact emergency services if help is not already on the way.</option>
-    <option correct="1" display_order="3" alt="">Assist them in contacting supportive family or friends.</option>
+    <option correct="0" display_order="2" alt="">Contact emergency services if help is not already on the way.</option>
+    <option correct="0" display_order="3" alt="">Assist them in contacting supportive family or friends.</option>
     <option correct="0" display_order="4" alt="">Grab them and remove them from the scene.</option>
   </answers>
-  <correct audio="">Correct! Calm support, contacting EMS, and linking to family/friends are appropriate PFA actions.</correct>
-  <incorrect audio="">Incorrect. The correct answers are: Calm support, contact EMS, and link to family/friends.</incorrect>
+  <correct audio="">Correct! Calm support is the most appropriate first action.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Calm the person and support their breathing.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

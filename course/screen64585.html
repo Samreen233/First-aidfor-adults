@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Q4: Alternatives to Soap</title>
+
+  <style>
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+
   <script>
     function checkAnswer() {
       const checkboxes = document.querySelectorAll('input[name="quizOption"]:checked');
+      const resultDiv = document.getElementById("result");
 
       if (checkboxes.length === 0) {
-        alert("Please select at least one option.");
+        resultDiv.textContent = "Please select at least one option.";
+        resultDiv.className = "incorrect";
         return;
       }
 
@@ -17,25 +32,31 @@
       let selected = [];
       checkboxes.forEach(cb => selected.push(cb.value));
 
-      // Save user answer in localStorage as JSON
+      // Save user answer
       localStorage.setItem("q4", JSON.stringify(selected));
 
       // Correct answers
       const correct = ["Ash", "Hydro-alcoholic solution"];
 
-      // Sort arrays to compare
+      // Compare answers
       const selectedSorted = selected.slice().sort();
       const correctSorted = correct.slice().sort();
 
-      // Check if user selected all correct options exactly
-      const isCorrect = selectedSorted.length === correctSorted.length &&
+      const isCorrect =
+        selectedSorted.length === correctSorted.length &&
         selectedSorted.every((val, idx) => val === correctSorted[idx]);
 
       if (isCorrect) {
-        alert("✅ Correct! Ash and Hydro-alcoholic solutions are effective alternatives to soap and water.");
-        UDUTU_API.goScreen(84445); // Next screen ID
+        resultDiv.textContent =
+          "✅ Correct! Ash and Hydro-alcoholic solutions are effective alternatives to soap and water.";
+        resultDiv.className = "correct";
+
+        // Go to next screen
+        UDUTU_API.goScreen(84445);
       } else {
-        alert("❌ Incorrect. The correct answers are: Ash and Hydro-alcoholic solution.");
+        resultDiv.textContent =
+          "❌ Incorrect. The correct answers are: Ash and Hydro-alcoholic solution.";
+        resultDiv.className = "incorrect";
       }
     }
   </script>
@@ -59,6 +80,8 @@
 
     <button type="button" onclick="checkAnswer()">Submit Answer</button>
   </form>
-</body>
 
+  <!-- Feedback message -->
+  <div id="result"></div>
+</body>
 </html>

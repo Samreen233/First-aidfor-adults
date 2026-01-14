@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Psychological First Aid Steps Quiz</title>
@@ -23,14 +24,20 @@
       margin: 12px 0;
     }
 
-    button {
+         button {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
+      background-color: #cdd2d8;
+      color: black;
+      border: 1px;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #828588;
+
+
     }
 
     button:disabled {
@@ -53,95 +60,99 @@
     }
   </style>
 </head>
+
 <body>
 
-<div class="quiz-container">
-  <h2>Question</h2>
-  <p>
-    What are the <strong>three basic steps of psychological first aid</strong>?
-  </p>
+  <div class="quiz-container">
+    <h2>Question</h2>
+    <p>
+      What are the <strong>three basic steps of psychological first aid</strong>?
+    </p>
 
-  <form>
-    <div class="option">
-      <input type="checkbox" value="Look">
-      Look for those that need help and determine who to prioritize.
-    </div>
+    <form>
+      <div class="option">
+        <input type="checkbox" value="Look">
+        Look for those that need help and determine who to prioritize.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Listen">
-      Listen actively to the person, show that you accept their feelings and be supportive and respectful to help calm them.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Listen">
+        Listen actively to the person, show that you accept their feelings and be supportive and respectful to help calm
+        them.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Lie">
-      Lie and tell them whatever you think they need to hear to help calm them down.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Lie">
+        Lie and tell them whatever you think they need to hear to help calm them down.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Leave">
-      Leave the area and distract them from the situation.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Leave">
+        Leave the area and distract them from the situation.
+      </div>
 
-    <div class="option">
-      <input type="checkbox" value="Link">
-      Link them to further help or to those that can support them like family and friends. Try to help them with their basic needs in that moment.
-    </div>
+      <div class="option">
+        <input type="checkbox" value="Link">
+        Link them to further help or to those that can support them like family and friends. Try to help them with their
+        basic needs in that moment.
+      </div>
 
-    <button type="button" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
-  </form>
+      <button type="button" id="submitBtn" onclick="checkAnswer()">Submit Answer</button>
+    </form>
 
-  <div class="result" id="result"></div>
-</div>
+    <div class="result" id="result"></div>
+  </div>
 
-<script>
-  function checkAnswer() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    const resultDiv = document.getElementById("result");
-    const submitBtn = document.getElementById("submitBtn");
+  <script>
+    function checkAnswer() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const resultDiv = document.getElementById("result");
+      const submitBtn = document.getElementById("submitBtn");
 
-    const selected = [];
-    checkboxes.forEach(cb => {
-      if (cb.checked) selected.push(cb.value);
-    });
+      const selected = [];
+      checkboxes.forEach(cb => {
+        if (cb.checked) selected.push(cb.value);
+      });
 
-    if (selected.length === 0) {
-      alert("Please select at least one option.");
-      return;
-    }
+      if (selected.length === 0) {
+        alert("Please select at least one option.");
+        return;
+      }
 
-    // Correct answers (Look, Listen, Link)
-    const correctAnswers = ["Look", "Listen", "Link"];
+      // Correct answers (Look, Listen, Link)
+      const correctAnswers = ["Look", "Listen", "Link"];
 
-    // Save answer
-    localStorage.setItem(
-      "psychologicalFirstAidSteps",
-      JSON.stringify(selected)
-    );
+      // Save answer
+      localStorage.setItem(
+        "psychologicalFirstAidSteps",
+        JSON.stringify(selected)
+      );
 
-    // Lock inputs
-    checkboxes.forEach(cb => cb.disabled = true);
-    submitBtn.disabled = true;
+      // Lock inputs
+      checkboxes.forEach(cb => cb.disabled = true);
+      submitBtn.disabled = true;
 
-    const isCorrect =
-      selected.length === correctAnswers.length &&
-      selected.every(a => correctAnswers.includes(a));
+      const isCorrect =
+        selected.length === correctAnswers.length &&
+        selected.every(a => correctAnswers.includes(a));
 
-    if (isCorrect) {
-      resultDiv.innerHTML =
-        "✔ Correct! The three steps are Look, Listen, and Link.";
-      resultDiv.className = "result correct";
-    } else {
-      resultDiv.innerHTML = `
+      if (isCorrect) {
+        resultDiv.innerHTML =
+          "✔ Correct! The three steps are Look, Listen, and Link.";
+        resultDiv.className = "result correct";
+      } else {
+        resultDiv.innerHTML = `
         ✖ Incorrect.<br>
         <strong>Correct answers:</strong><br>
         • Look for those who need help and prioritize<br>
         • Listen actively and supportively<br>
         • Link them to further help and basic needs
       `;
-      resultDiv.className = "result incorrect";
+        resultDiv.className = "result incorrect";
+      }
     }
-  }
-</script>
+  </script>
 
 </body>
+
 </html>

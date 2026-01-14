@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 18 of 20" closeText="OK">
-    <question>Which of the following are steps to calm an adult in distress? (Select all that apply)</question>
+    <question>Which of the following is the most important step to calm an adult in distress? (Select only one)</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Guide them to take slow, deep breaths.</option>
-    <option correct="1" display_order="1" alt="">Speak calmly and reassure without forcing responses.</option>
+    <option correct="0" display_order="0" alt="">Ignore their emotional state and focus only on tasks.</option>
+    <option correct="1" display_order="1" alt="">Guide them to take slow, deep breaths.</option>
     <option correct="0" display_order="2" alt="">Force them to sit or stop shaking immediately.</option>
-    <option correct="0" display_order="3" alt="">Ignore their emotional state and focus only on tasks.</option>
+    <option correct="0" display_order="3" alt="">Speak calmly and reassure without forcing responses.</option>
   </answers>
-  <correct audio="">Correct! Breathing guidance and calm reassurance help manage distress safely.</correct>
-  <incorrect audio="">Incorrect. The correct answers are: Slow deep breaths and calm reassurance without forcing.</incorrect>
+  <correct audio="">Correct! Guiding them to take slow, deep breaths is the most important first step.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Guide them to take slow, deep breaths.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Cardiac Arrest Quiz</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,9 +13,9 @@
 
     .quiz-box {
       max-width: 650px;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       padding: 20px;
-      background: #f9f9f9;
+      /* background: #f9f9f9; */
     }
 
     h3 {
@@ -29,6 +30,19 @@
       margin-top: 15px;
       padding: 8px 14px;
       cursor: pointer;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
     }
   </style>
 </head>
@@ -61,7 +75,10 @@
       Early defibrillation (if available)
     </div>
 
-    <button onclick="checkAnswer()">Submit</button>
+    <button type="button" onclick="checkAnswer()">Submit</button>
+
+    <!-- Feedback -->
+    <div id="result"></div>
   </div>
 
   <script>
@@ -73,18 +90,24 @@
         "Early defibrillation"
       ];
 
+      const resultDiv = document.getElementById("result");
       const selected = [];
+
       document
         .querySelectorAll('input[type="checkbox"]:checked')
         .forEach(cb => selected.push(cb.value));
 
       if (selected.length === 0) {
-        alert("Please select at least one option.");
+        resultDiv.textContent = "Please select at least one option.";
+        resultDiv.className = "incorrect";
         return;
       }
 
-      // Save answer
-      localStorage.setItem("cardiacArrestQuiz_Q1", JSON.stringify(selected));
+      // Save user answer
+      localStorage.setItem(
+        "cardiacArrestQuiz_Q1",
+        JSON.stringify(selected)
+      );
 
       // Check correctness
       const isCorrect =
@@ -92,13 +115,17 @@
         selected.every(ans => correctAnswers.includes(ans));
 
       if (isCorrect) {
-        alert("✅ Correct! These steps form the Chain of Survival.");
+        resultDiv.textContent =
+          "✅ Correct! These steps form the Chain of Survival.";
+        resultDiv.className = "correct";
       } else {
-        alert("❌ Incorrect. All listed actions are critical for survival.");
+        resultDiv.innerHTML =
+          "❌ Incorrect.<br><strong>Correct answers are:</strong><br>• " +
+          correctAnswers.join("<br>• ");
+        resultDiv.className = "incorrect";
       }
     }
   </script>
 
 </body>
-
 </html>

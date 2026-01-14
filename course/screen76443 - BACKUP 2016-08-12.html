@@ -1,33 +1,125 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled Page</title><script>function Initialize(){InitSound(); }function InitSound(){} var isAssessment=false;</script><script src="utility.js"></script><script src="screenUtils.js"></script><script src="interactiveUtils.js"></script> <script type="text/javascript" src="jquery.js"></script><script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script></head><body class="contentBody" onload="Initialize();">
-<div id="Water_Mark"></div>
-	<div id="UDUTU_Text1" class="text left top textHalfWidth fullHeight">
-		<div class="textHeadline" id="UDUTU_Text1_Headline">Final Assessment Results</div>
-		<div class="textContent" id="UDUTU_Text1_Content"><p><b>Your score:&nbsp;</b><span id="divScore">(Auto-generated SCORE will appear here.)</span>%<script>try{var score = Math.round(UDUTU_API.generateScore());document.getElementById('divScore').innerHTML = score;}catch(ex){}</script></p><p><br /></p><span id="spnPassedText">Great job! You passed the course. Select the Exit button to exit the course and print your certificate of completion.</span><span id="spnFailedText">Sorry, you did not achieve the minimum score of 70%. To retake the assessment, select the Course Menu button and then select the Exit button to exit the course. At any time, restart the course to try again.</span><script>try{var score1 = Math.round(UDUTU_API.generateScore());if (score1 >= (UDUTU_API.gblPassingScore * 100)){document.getElementById('spnFailedText').innerHTML = '';}else{document.getElementById('spnPassedText').innerHTML = '';}}catch(ex){}</script></div>		
-		<div id="UDUTU_Text1_EditContent" class="editPanel">
-			<p>text editing options</p>
-			<div id="UDUTU_Text1_btnAdd"></div>
-			<div id="UDUTU_Text1_btnEdit"></div>
-			<div id="UDUTU_Text1_btnSelect"></div>
-		</div>
-	</div>
+<!DOCTYPE html>
+<html lang="en">
 
-	<div id="UDUTU_MultiMedia1" class="image right top imageHalfWidth imageRegHeight">
-		<img id="UDUTU_MultiMedia1_Content" class="SomeClass" title="File on a tablet"  width='448' height='336' src='../media/content/EMR_99_81596.png' srcWidth='448' srcHeight='336' ALT='File on a tablet' >
-		
-		<div id="UDUTU_MultiMedia1_EditContent" class="editPanel">
-			<p>media editing options</p>
-			<div id="UDUTU_MultiMedia1_btnAdd"></div>
-			<div id="UDUTU_MultiMedia1_btnEdit"></div>
-			<div id="UDUTU_MultiMedia1_btnSelect"></div>
-		</div>
-	
-		<div id="UDUTU_MultiMedia1_Caption" class="caption">
-			<div id="UDUTU_MultiMedia1_Caption_Content" class="capText"></div>
-			<div id="UDUTU_MultiMedia1_Caption_EditContent" class="editPanel">
-				<p>edit caption</p>
-				<div id="UDUTU_MultiMedia1_Caption_btnEdit"></div>
-			</div>
-		</div>
-	</div>
-	<span ID="UDUTU_Narration" NAME="UDUTU_Narration" style="visibility: hidden;">../Media/Content/sample.mp3</span>
-</body></html>
+<head>
+  <meta charset="UTF-8">
+  <title>Final Assessment Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 25px;
+      background: #ffffff;
+    }
+
+    .results-container {
+      max-width: 800px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .score {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .feedback {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .passed {
+      color: green;
+    }
+
+    .failed {
+      color: red;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="results-container">
+    <h2>Final Assessment Results</h2>
+
+    <div class="score">Your score: <span id="divScore">0</span>%</div>
+
+    <div id="feedback" class="feedback"></div>
+
+    <h3>Question Review:</h3>
+    <div id="review"></div>
+  </div>
+
+  <script>
+    // --- CUSTOM SCORING LOGIC ---
+    const totalQuestions = 5; // Update this to match total number of questions
+    let correctCount = 0;
+    let reviewHtml = "";
+
+    // Question 1 - COVID Transmission (multiple)
+    const q1 = JSON.parse(localStorage.getItem("q1") || "[]");
+    const q1Correct = ["Close contact", "Air-borne droplets", "Blood"];
+    const q1CorrectBool = q1.length === q1Correct.length && q1.sort().toString() === q1Correct.sort().toString();
+    if (q1CorrectBool) correctCount++;
+    reviewHtml += "<p><strong>Q1:</strong> COVID-19 transmission<br> Your answer: " + q1.join(", ") + "<br>" +
+      (q1CorrectBool ? "✅ Correct" : "❌ Incorrect. Correct: " + q1Correct.join(", ")) + "</p>";
+
+    // Question 2 - Mask reuse (single)
+    const q2 = localStorage.getItem("q2");
+    const q2Correct = "false";
+    const q2CorrectBool = q2 === q2Correct;
+    if (q2CorrectBool) correctCount++;
+    reviewHtml += "<p><strong>Q2:</strong> Mask reuse<br> Your answer: " + q2 + "<br>" +
+      (q2CorrectBool ? "✅ Correct" : "❌ Incorrect. Correct: " + q2Correct) + "</p>";
+
+    // Question 3 - Handwashing (single)
+    const q3 = localStorage.getItem("q3");
+    const q3Correct = "false";
+    const q3CorrectBool = q3 === q3Correct;
+    if (q3CorrectBool) correctCount++;
+    reviewHtml += "<p><strong>Q3:</strong> Handwashing<br> Your answer: " + q3 + "<br>" +
+      (q3CorrectBool ? "✅ Correct" : "❌ Incorrect. Correct: " + q3Correct) + "</p>";
+
+    // Question 4 - Alternatives to soap (multiple)
+    const q4 = JSON.parse(localStorage.getItem("q4") || "[]");
+    const q4Correct = ["Ash", "Hydro-alcoholic solution"];
+    const q4CorrectBool = q4.length === q4Correct.length && q4.sort().toString() === q4Correct.sort().toString();
+    if (q4CorrectBool) correctCount++;
+    reviewHtml += "<p><strong>Q4:</strong> Alternatives to soap<br> Your answer: " + q4.join(", ") + "<br>" +
+      (q4CorrectBool ? "✅ Correct" : "❌ Incorrect. Correct: " + q4Correct.join(", ")) + "</p>";
+
+    // Question 5 - Follow-up First Aid (single)
+    const q5 = localStorage.getItem("firstAid_followUp");
+    const q5Correct = "defibrillator";
+    const q5CorrectBool = q5 === q5Correct;
+    if (q5CorrectBool) correctCount++;
+    reviewHtml += "<p><strong>Q5:</strong> Follow-up First Aid<br> Your answer: " + q5 + "<br>" +
+      (q5CorrectBool ? "✅ Correct" : "❌ Incorrect. Correct: " + q5Correct) + "</p>";
+
+    // Calculate final score
+    const scorePercent = Math.round((correctCount / totalQuestions) * 100);
+    document.getElementById("divScore").textContent = scorePercent;
+    document.getElementById("review").innerHTML = reviewHtml;
+
+    // Feedback message
+    const passingScore = 70; // Adjust passing %
+    const feedbackDiv = document.getElementById("feedback");
+    if (scorePercent >= passingScore) {
+      feedbackDiv.textContent = "Great job! You passed the course.";
+      feedbackDiv.className = "feedback passed";
+    } else {
+      feedbackDiv.textContent = "Sorry, you did not achieve the minimum score of " + passingScore + "%.";
+      feedbackDiv.className = "feedback failed";
+    }
+  </script>
+</body>
+</html>

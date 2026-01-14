@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <content marked="true" checkText="I'm done" showText="Show me" instructionsText="Instructions" titleText="Post-Course Assessment 30 of 34" closeText="OK">
-    <question>Which is a sign that someone may need psychological first aid? (Select all that apply)</question>
+    <question>Which of the following is the most obvious sign that someone may need psychological first aid? (Select only one)</question>
   <answers>
-    <option correct="1" display_order="0" alt="">Visible trembling, shaking, or crying</option>
-    <option correct="1" display_order="1" alt="">Extreme anxiety or panic</option>
+    <option correct="0" display_order="0" alt="">Reading quietly</option>
+    <option correct="1" display_order="1" alt="">Visible trembling, shaking, or crying</option>
     <option correct="0" display_order="2" alt="">Relaxed and smiling</option>
-    <option correct="0" display_order="3" alt="">Reading quietly</option>
+    <option correct="0" display_order="3" alt="">Extreme anxiety or panic</option>
   </answers>
-  <correct audio="">Correct! Physical and emotional distress signs indicate a need for PFA.</correct>
-  <incorrect audio="">Incorrect. The correct answers are: Trembling, shaking, crying, and extreme anxiety/panic.</incorrect>
+  <correct audio="">Correct! Visible trembling, shaking, or crying is the most obvious sign that PFA may be needed.</correct>
+  <incorrect audio="">Incorrect. The correct answer is: Visible trembling, shaking, or crying.</incorrect>
   <partial audio=""></partial>
   <show_me audio=""></show_me>
 </content>

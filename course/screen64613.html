@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>First Aid Question</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,12 +14,6 @@
 
     .quiz-container {
       max-width: 800px;
-    }
-
-    .question {
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 25px;
     }
 
     .option {
@@ -38,7 +33,6 @@
     .feedback {
       margin-top: 20px;
       font-weight: bold;
-      display: none;
     }
 
     .correct {
@@ -65,6 +59,7 @@
     <p><strong>What could you have done differently if you were in the same position again?</strong></p>
 
     <form id="quizForm">
+
       <div class="option">
         <input type="radio" name="answer" id="opt1" value="blanket">
         <label for="opt1">You should have covered the man in a blanket to keep him warm</label>
@@ -88,23 +83,39 @@
       <button type="button" onclick="submitAnswer()">Submit</button>
     </form>
 
-    <div class="result" id="result"></div>
+    <!-- Feedback -->
+    <div id="result" class="feedback"></div>
+
   </div>
 
   <script>
     function submitAnswer() {
       const selected = document.querySelector('input[name="answer"]:checked');
+      const resultDiv = document.getElementById("result");
 
       if (!selected) {
-        alert("Please select an option.");
+        resultDiv.textContent = "Please select an answer.";
+        resultDiv.className = "feedback incorrect";
         return;
       }
 
-      document.getElementById("result").innerText =
-        "Your answer has been submitted successfully.";
+      // Save answer
+      localStorage.setItem("firstAid_followUp", selected.value);
+
+      // Correct answer
+      const correctAnswer = "defibrillator";
+
+      if (selected.value === correctAnswer) {
+        resultDiv.textContent = "✅ Correct! Early defibrillation can significantly improve survival.";
+        resultDiv.className = "feedback correct";
+      } else {
+        resultDiv.innerHTML =
+          "❌ Incorrect.<br><strong>Correct answer is:</strong><br>" +
+          "You would have asked a bystander to find out if there is a defibrillator nearby.";
+        resultDiv.className = "feedback incorrect";
+      }
     }
   </script>
 
 </body>
-
 </html>
