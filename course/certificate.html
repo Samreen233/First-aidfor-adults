@@ -120,22 +120,25 @@
 
 <script>
     function populateCertificate() {
-        try {
-            var score = Math.round(UDUTU_API.generateScore());
-            var passingScore = UDUTU_API.gblPassingScore * 100;
+        const params = new URLSearchParams(window.location.search);
+        const score = params.get("score");
 
+        if (score) {
             document.getElementById("score").innerHTML = score + "%";
-            document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+        } else {
+            document.getElementById("score").innerHTML = "--%";
+        }
 
-            if (score < passingScore) {
-                document.getElementById("status").innerHTML =
-                    "This certificate is not valid as the minimum passing score was not achieved.";
-            }
-        } catch (e) {
-            console.log("Certificate population error", e);
+        document.getElementById("date").innerHTML =
+            new Date().toLocaleDateString();
+
+        const storedName = localStorage.getItem("learnerName");
+        if (storedName) {
+            document.getElementById("learnerName").innerHTML = storedName;
         }
     }
 </script>
+
 </head>
 
 <body onload="populateCertificate();">
@@ -144,7 +147,7 @@
 
     <div class="logo">
         <!-- Replace with your organization logo -->
-        <img src="media/content/org_logo.png" alt="Organization Logo">
+        <img src="../media/content/logo.png" alt="Organization Logo">
     </div>
 
     <div class="title">Certificate of Completion</div>
@@ -154,7 +157,9 @@
     </div>
 
     <div class="content">
-        <div class="highlight">The Learner</div>
+        <!-- <div class="highlight">The Learner</div> -->
+         <div class="highlight" id="learnerName">The Learner</div>
+
 
         has successfully completed the training module
 
@@ -175,13 +180,17 @@
 
     <div class="footer">
         <div class="signature">
+            <img src="../media/content/Director_programs.jpeg" alt="Director Programs Signature" style="height: 80px; width: 200px; transform: rotate(-9deg); ">
+            <br><b style="position: relative;">NIDA-Pakistan</b>
             <div class="signature-line"></div>
-            Authorized Signatory
+            Director Programs
         </div>
 
         <div class="signature">
+            <img src="../media/content/Chief_Exective.jpeg" alt="Chief Executive Signature" style="height: 80px; width: 150px; ">
+            <br><b>NIDA-Pakistan</b>
             <div class="signature-line"></div>
-            Training Coordinator
+            Chief Executive 
         </div>
     </div>
 
